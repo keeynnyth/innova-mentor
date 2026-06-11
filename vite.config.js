@@ -15,9 +15,9 @@ export default defineConfig({
       ],
 
       manifest: {
-        name: 'Mentor Innova Demo',
-        short_name: 'Mentor',
-        description: 'Demo de PWA para el equipo 12',
+        name: 'Innova Mentor',
+        short_name: 'Innova',
+        description: 'Aplicación Web Progresiva para acompañar a personas adultas a recuperar el hábito del estudio.',
 
         theme_color: '#4F46E5',
         background_color: '#F3F4F6',
@@ -29,12 +29,12 @@ export default defineConfig({
 
         icons: [
           {
-            src: '/icons/agencia.png',
+            src: '/icons/icon-192x192.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: '/icons/innovalab.png',
+            src: '/icons/icon-512x512.png',
             sizes: '512x512',
             type: 'image/png'
           }
