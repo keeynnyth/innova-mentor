@@ -1,6 +1,6 @@
 
 import { useState } from 'react'
-import logoHorizontal from '/branding/logo-horizontal.png'
+import presentacion from '/branding/presentacion.png'
 
 function App() {
   const [completado, setCompletado] = useState(false)
@@ -11,7 +11,7 @@ function App() {
       {/* Encabezado de la aplicación */}
       <header style={styles.navbar}>
         <img
-          src={logoHorizontal}
+          src={presentacion}
           alt="Innova Mentor"
           style={styles.logo}
         />
@@ -76,7 +76,7 @@ const styles = {
 
   navbar: {
     backgroundColor: '#EEF4FF',
-    padding: '28px',
+    padding: '22px 20px',
     textAlign: 'center',
     borderBottomLeftRadius: '18px',
     borderBottomRightRadius: '18px',
@@ -84,8 +84,8 @@ const styles = {
   },
 
   logo: {
-    width: '300px',
-    maxWidth: '95%',
+    width: '340px',
+    maxWidth: '100%',
     display: 'block',
     margin: '0 auto'
   },
@@ -105,7 +105,9 @@ const styles = {
   titulo: {
     marginTop: 0,
     marginBottom: '18px',
-    color: '#23395B'
+    color: '#23395B',
+    fontSize: '28px',
+    fontWeight: '700'
   },
 
   parrafo: {
