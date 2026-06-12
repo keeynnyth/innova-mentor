@@ -23,7 +23,7 @@ export default defineConfig({
         name: 'Innova Mentor',
 
         // Nombre corto que verá el usuario al instalar la aplicación
-        short_name: 'Innova',
+        short_name: 'Innova Mentor',
 
         // Descripción de la aplicación
         description:
