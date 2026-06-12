@@ -75,12 +75,9 @@ const styles = {
   },
 
   navbar: {
-    backgroundColor: '#EEF4FF',
-    padding: '22px 20px',
-    textAlign: 'center',
-    borderBottomLeftRadius: '18px',
-    borderBottomRightRadius: '18px',
-    borderBottom: '1px solid #DCE7FF'
+    backgroundColor: '#F8FAFF',
+    padding: '26px 20px 12px',
+    textAlign: 'center'
   },
 
   logo: {
