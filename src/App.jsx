@@ -1,6 +1,7 @@
 
 import { useState } from 'react'
 import presentacion from '/branding/presentacion.png'
+import avatarNova from '/branding/avatar-nova-hi.png'
 
 function App() {
   const [completado, setCompletado] = useState(false)
@@ -23,9 +24,20 @@ function App() {
         {/* Tarjeta de bienvenida */}
         <div style={styles.card}>
 
-          <h2 style={styles.titulo}>
-            ¡Hola! Soy Nova 👋
-          </h2>
+          {/* Saludo de Nova */}
+          <div style={styles.tituloContainer}>
+
+            <img
+              src={avatarNova}
+              alt="Nova"
+              style={styles.avatar}
+            />
+
+            <h2 style={styles.titulo}>
+              ¡Hola! Soy Nova
+            </h2>
+
+          </div>
 
           <p style={styles.parrafo}>
             Estoy aquí para acompañarte en tu camino de aprendizaje.
@@ -99,9 +111,25 @@ const styles = {
     textAlign: 'center'
   },
 
+  tituloContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '14px',
+    marginBottom: '22px'
+  },
+
+  avatar: {
+    width: '60px',
+    height: '60px',
+    borderRadius: '65%',
+    objectFit: 'cover',
+    
+    boxShadow: '0 4px 10px rgba(38,198,218,0.20)'
+  },
+
   titulo: {
-    marginTop: 0,
-    marginBottom: '18px',
+    margin: 0,
     color: '#23395B',
     fontSize: '28px',
     fontWeight: '700'
