@@ -115,26 +115,31 @@ src/
 
 ---
 
-# 📚 Documentación
+## 📚 Documentación
 
-Toda la documentación técnica y funcional del proyecto se encuentra organizada en la carpeta **/docs**.
+Toda la documentación técnica y funcional de **Innova Mentor** se encuentra organizada en la carpeta **`/docs`**.
 
-## 📂 Documentación técnica
+### 📁 Documentación técnica
 
-- 📄 01 - Visión del proyecto
-- 🎨 02 - Identidad visual
-- 🏗️ 03 - Arquitectura
-- 📝 04 - Historial de versiones
-- 📋 05 - Backlog
-- ⚙️ 06 - Decisiones técnicas
-- 📖 07 - Diario de desarrollo
+* 📄 [01 - Visión del proyecto](docs/01-vision-del-proyecto.md)
+* 🎨 [02 - Identidad visual](docs/02-identidad-visual.md)
+* 🏗️ [03 - Arquitectura](docs/03-arquitectura.md)
+* 📝 [04 - Historial de versiones](docs/04-historial-de-versiones.md)
+* 📋 [05 - Backlog](docs/05-backlog.md)
+* ⚙️ [06 - Decisiones técnicas](docs/06-decisiones-tecnicas.md)
+* 📖 [07 - Guía del usuario](docs/07-guia-del-usuario.md)
+* 📓 [08 - Diario de desarrollo](docs/08-diario-de-desarrollo.md)
+* 📕 [09 - Bitácora del proyecto](docs/09-bitacora-del-proyecto.md)
 
-## 👤 Guía de usuario
+### 👤 Guía del usuario
 
-- 🚀 Primeros pasos
-- 🤖 Instalación en Android
-- 🍎 Instalación en iPhone
-- 💻 Instalación en Windows
+Dentro de la carpeta **`docs/guia-usuario`** encontrarás las guías detalladas para comenzar a utilizar la aplicación:
+
+* 🚀 [Primeros pasos](docs/guia-usuario/primeros-pasos.md)
+* 🤖 [Instalar en Android](docs/guia-usuario/instalar-en-android.md)
+* 🍎 [Instalar en iPhone](docs/guia-usuario/instalar-en-iphone.md)
+* 💻 [Instalar en Windows](docs/guia-usuario/instalar-en-windows.md)
+
 
 > **Nota:** estos documentos se actualizarán durante todo el desarrollo del proyecto conforme se implementen nuevas funcionalidades y se tomen decisiones técnicas.
 
