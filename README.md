@@ -1,10 +1,20 @@
 # 📚 Innova Mentor
 
-## Aprender vuelve a ser posible.
+<p align="center">
+  <img src="./public/branding/presentacion.png" alt="Innova Mentor" width="700">
+</p>
 
-Aplicación Web Progresiva (PWA) desarrollada en React como parte del programa **Innova Lab**.
+<h3 align="center">
+Aprender vuelve a ser posible.
+</h3>
 
-**Innova Mentor** busca acompañar a personas adultas que desean retomar el hábito del estudio mediante un mentor virtual llamado **Nova**, desafíos diarios y contenido personalizado que fomente la constancia y el aprendizaje continuo.
+<p align="center">
+
+Aplicación Web Progresiva (PWA) desarrollada en <strong>React</strong> como parte del programa <strong>Innova Lab</strong>.
+
+<strong>Innova Mentor</strong> acompaña a personas adultas que desean recuperar el hábito del estudio mediante un mentor virtual llamado <strong>Nova</strong>, pequeños desafíos diarios y contenido personalizado que fomente la constancia y el aprendizaje continuo.
+
+</p>
 
 ---
 
@@ -100,6 +110,33 @@ src/
 ├── types/
 └── utils/
 ```
+
+---
+
+---
+
+# 📚 Documentación
+
+Toda la documentación técnica y funcional del proyecto se encuentra organizada en la carpeta **/docs**.
+
+## 📂 Documentación técnica
+
+- 📄 01 - Visión del proyecto
+- 🎨 02 - Identidad visual
+- 🏗️ 03 - Arquitectura
+- 📝 04 - Historial de versiones
+- 📋 05 - Backlog
+- ⚙️ 06 - Decisiones técnicas
+- 📖 07 - Diario de desarrollo
+
+## 👤 Guía de usuario
+
+- 🚀 Primeros pasos
+- 🤖 Instalación en Android
+- 🍎 Instalación en iPhone
+- 💻 Instalación en Windows
+
+> **Nota:** estos documentos se actualizarán durante todo el desarrollo del proyecto conforme se implementen nuevas funcionalidades y se tomen decisiones técnicas.
 
 ---
 
