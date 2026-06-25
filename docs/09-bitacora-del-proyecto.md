@@ -166,6 +166,90 @@ Más que desarrollar una aplicación, el proceso comenzó a convertirse en una o
 
 ---
 
+Fecha: 25/06/2026
+
+Se implementó la Pantalla Inicial v2.
+
+Cambios:
+- Se incorporó Nova como elemento central.
+- Se agregaron los botones Registrarse e Iniciar sesión.
+- Se alineó la pantalla con el flujo definido por el equipo de diseño.
+- Se mantuvo la identidad visual de Innova Mentor.
+
+ ## Diseño de Registro v2
+
+Se definió una versión simplificada de la pantalla de registro basada en la propuesta del equipo de diseño y adaptada a la identidad visual de Innova Mentor.
+
+Decisiones tomadas:
+
+* Mantener a Nova como elemento central de la experiencia.
+* Eliminar los campos "Nombre de usuario" y "Fecha de nacimiento".
+* Incorporar los campos:
+
+  * Nombre completo
+  * Correo electrónico
+  * Contraseña
+  * Confirmar contraseña
+* Mantener el estilo visual institucional de Innova Mentor.
+* Reservar la funcionalidad "¿Olvidaste tu contraseña?" para la futura pantalla de inicio de sesión.
+* Utilizar formularios limpios sin iconos dentro de los campos para favorecer una apariencia moderna y una implementación más sencilla.
+
+## Implementación de la Pantalla de Registro v2
+
+### Objetivo
+
+Diseñar e implementar una versión mejorada de la pantalla de registro alineada con la identidad visual de Innova Mentor y adaptada a las necesidades del MVP.
+
+### Cambios realizados
+
+* Se creó la estructura de la pantalla de registro en:
+
+  * `src/pages/Register/Register.jsx`
+  * `src/pages/Register/Register.css`
+
+* Se incorporó el avatar de Nova como elemento principal de bienvenida.
+
+* Se definió el flujo de registro con los siguientes campos:
+
+  * Nombre completo
+  * Correo electrónico
+  * Contraseña
+  * Confirmar contraseña
+
+* Se eliminó la propuesta inicial de incluir:
+
+  * Nombre de usuario
+  * Fecha de nacimiento
+
+  por considerarse información no necesaria para la primera versión del producto.
+
+* Se mantuvo la identidad visual de Innova Mentor:
+
+  * Colores institucionales
+  * Botón principal violeta
+  * Estilo visual coherente con la Pantalla Inicial v2
+
+* Se agregó el enlace:
+
+  * "¿Ya tienes una cuenta? Iniciar sesión"
+
+### Decisiones de diseño
+
+* Se optó por formularios sin iconos para lograr una apariencia más moderna y facilitar el mantenimiento del código.
+
+* Se decidió reservar la funcionalidad "¿Olvidaste tu contraseña?" para la futura pantalla de inicio de sesión.
+
+* Se modificó el mensaje de bienvenida para reforzar el rol de Nova como acompañante del proceso de aprendizaje:
+
+  "Comencemos juntos tu camino de aprendizaje."
+
+### Resultado
+
+La Pantalla de Registro v2 quedara a consideracion del grupo para formar parte del MVP y prepararse para futuras integraciones con el sistema de autenticación.
+
+ 
+---
+
 # Próximas entradas
 
 Esta bitácora continuará creciendo junto con el proyecto.
