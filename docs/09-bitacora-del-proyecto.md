@@ -247,7 +247,56 @@ Diseñar e implementar una versión mejorada de la pantalla de registro alineada
 
 La Pantalla de Registro v2 quedara a consideracion del grupo para formar parte del MVP y prepararse para futuras integraciones con el sistema de autenticación.
 
- 
+## Implementación de la Pantalla de Inicio de Sesión v2
+
+### Objetivo
+
+Diseñar e implementar una versión mejorada de la pantalla de inicio de sesión, manteniendo la identidad visual de Innova Mentor y la coherencia con la Pantalla Inicial v2 y Registro v2.
+
+### Cambios realizados
+
+* Se creó la estructura de la pantalla de inicio de sesión en:
+
+  * `src/pages/Login/Login.jsx`
+  * `src/pages/Login/Login.css`
+
+* Se incorporó el avatar de Nova como elemento principal de bienvenida.
+
+* Se definió el flujo de autenticación con los siguientes campos:
+
+  * Correo electrónico
+  * Contraseña
+
+* Se agregó la acción principal:
+
+  * Iniciar sesión
+
+* Se incorporó el enlace:
+
+  * ¿Olvidaste tu contraseña?
+
+* Se agregó la navegación hacia el registro mediante:
+
+  * ¿No tienes una cuenta? Crear cuenta
+
+### Decisiones de diseño
+
+* Se reutilizó la identidad visual desarrollada para Registro v2 con el fin de mantener consistencia en toda la experiencia de autenticación.
+
+* Se utilizó el mensaje de bienvenida:
+
+  "Me alegra verte de nuevo."
+
+  para generar una experiencia más cercana y alineada con la personalidad de Nova.
+
+* Se mantuvo un diseño limpio y moderno utilizando formularios sin iconos.
+
+* Se conservó la paleta de colores institucional de Innova Mentor.
+
+### Resultado
+
+La Pantalla de Inicio de Sesión v2 quedó preparada para futuras integraciones con el sistema de autenticación y forma parte del flujo de acceso definido para el MVP.
+
 ---
 
 # Próximas entradas
