@@ -1,15 +1,12 @@
 
-import { useState } from 'react'
 import presentacion from '/branding/presentacion.png'
 import avatarNova from '/branding/avatar-nova-hi.png'
 
 function App() {
-  const [completado, setCompletado] = useState(false)
-
   return (
     <div style={styles.container}>
 
-      {/* Encabezado de la aplicación */}
+      {/* Encabezado */}
       <header style={styles.navbar}>
         <img
           src={presentacion}
@@ -18,50 +15,49 @@ function App() {
         />
       </header>
 
-      {/* Contenido principal */}
+      {/* Contenido */}
       <main style={styles.content}>
 
-        {/* Tarjeta de bienvenida */}
         <div style={styles.card}>
 
-          {/* Saludo de Nova */}
-          <div style={styles.tituloContainer}>
+          {/* Avatar Nova */}
+          <img
+            src={avatarNova}
+            alt="Nova"
+            style={styles.avatar}
+          />
 
-            <img
-              src={avatarNova}
-              alt="Nova"
-              style={styles.avatar}
-            />
+          <h2 style={styles.titulo}>
+            ¡Hola! Soy Nova
+         </h2>
 
-            <h2 style={styles.titulo}>
-              ¡Hola! Soy Nova
-            </h2>
+          {/* Subtítulo */}
+         <p style={styles.subtitulo}>
+         👋 Tu mentora virtual
+        </p>
 
-          </div>
-
+          {/* Descripción */}
           <p style={styles.parrafo}>
-            Estoy aquí para acompañarte en tu camino de aprendizaje.
+            Estoy aquí para ayudarte a construir hábitos de aprendizaje y alcanzar tus objetivos.
           </p>
 
           <p style={styles.parrafo}>
-            Tu primer desafío será comenzar con un pequeño paso.
+            Juntos avanzaremos paso a paso.
           </p>
 
-          <button
-            style={{
-              ...styles.button,
-              backgroundColor: completado ? '#10B981' : '#4F46E5'
-            }}
-            onClick={() => setCompletado(true)}
-          >
-            {completado
-              ? '¡Primer paso completado! ✓'
-              : 'Comenzar mi camino'}
+          {/* Botón Registrarse */}
+          <button style={styles.buttonPrimary}>
+            Registrarse
+          </button>
+
+          {/* Botón Iniciar Sesión */}
+          <button style={styles.buttonSecondary}>
+            Iniciar sesión
           </button>
 
         </div>
 
-        {/* Descripción del proyecto */}
+        {/* Información del proyecto */}
         <p style={styles.textoInfo}>
           Innova Mentor es una Aplicación Web Progresiva (PWA)
           diseñada para acompañar a personas adultas que desean
@@ -105,52 +101,66 @@ const styles = {
 
   card: {
     backgroundColor: '#FFFFFF',
-    padding: '24px',
+    padding: '28px',
     borderRadius: '18px',
     boxShadow: '0 8px 20px rgba(0,0,0,0.06)',
     textAlign: 'center'
   },
 
-  tituloContainer: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '14px',
-    marginBottom: '22px'
-  },
+avatar: {
+  width: '100px',
+  height: '100px',
+  borderRadius: '50%',
+  objectFit: 'cover',
+  marginBottom: '12px',
+  boxShadow: '0 4px 12px rgba(38,198,218,0.25)'
+},
 
-  avatar: {
-    width: '60px',
-    height: '60px',
-    borderRadius: '65%',
-    objectFit: 'cover',
-    
-    boxShadow: '0 4px 10px rgba(38,198,218,0.20)'
-  },
+titulo: {
+  margin: '0 0 6px',
+  color: '#23395B',
+  fontSize: '28px',
+  fontWeight: '700'
+},
 
-  titulo: {
-    margin: 0,
-    color: '#23395B',
-    fontSize: '28px',
-    fontWeight: '700'
-  },
+subtitulo: {
+  marginTop: 0,
+  marginBottom: '22px',
+  color: '#23395B',
+  fontWeight: '600',
+  fontSize: '18px'
+},
 
   parrafo: {
     color: '#4B5563',
-    lineHeight: '1.7',
-    marginBottom: '18px'
+    lineHeight: '1.8',
+    marginBottom: '16px'
   },
 
-  button: {
+  buttonPrimary: {
     width: '100%',
     padding: '14px',
+    backgroundColor: '#4F46E5',
     color: '#FFFFFF',
     border: 'none',
     borderRadius: '10px',
     fontSize: '16px',
     fontWeight: '600',
     cursor: 'pointer',
-    transition: '0.3s'
+    marginTop: '12px',
+    marginBottom: '12px'
+  },
+
+  buttonSecondary: {
+    width: '100%',
+    padding: '14px',
+    backgroundColor: '#FFFFFF',
+    color: '#4F46E5',
+    border: '2px solid #4F46E5',
+    borderRadius: '10px',
+    fontSize: '16px',
+    fontWeight: '600',
+    cursor: 'pointer'
   },
 
   textoInfo: {
