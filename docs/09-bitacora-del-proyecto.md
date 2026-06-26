@@ -335,6 +335,61 @@ Diseñar e implementar la primera pantalla del onboarding de Innova Mentor, pres
 La pantalla de Bienvenida de Nova quedó integrada al flujo de onboarding y establece el tono conversacional que acompañará al usuario durante toda la experiencia dentro de Innova Mentor.
 ---
 
+# Implementación del Onboarding
+
+## Objetivo
+
+Diseñar e implementar el flujo completo de incorporación del usuario a Innova Mentor.
+
+El objetivo fue construir una experiencia conversacional donde Nova conozca al usuario antes de comenzar su recorrido de aprendizaje.
+
+---
+
+## Pantallas implementadas
+
+- Bienvenida de Nova
+- Objetivos
+- Dificultades
+- Tiempo disponible
+- Intereses (multiselección)
+- Pantalla final "Ready"
+
+---
+
+## Componentes desarrollados
+
+- SelectionCard
+
+Primer componente reutilizable del proyecto, utilizado para todas las preguntas del onboarding.
+
+---
+
+## Mejoras implementadas
+
+- Identidad visual unificada.
+- Lenguaje adaptado al público argentino.
+- Experiencia conversacional.
+- Botones con estados interactivos.
+- Selección única y múltiple.
+- Preparación para integración con React Router.
+
+---
+
+## Documentación
+
+Se incorporaron los documentos:
+
+- 12-experiencia-del-usuario.md
+- 13-dashboard-mi-recorrido.md
+
+---
+
+## Resultado
+
+El proyecto cuenta ahora con un flujo completo de onboarding preparado para integrarse con la navegación principal de la aplicación.
+
+---
+
 # Próximas entradas
 
 Esta bitácora continuará creciendo junto con el proyecto.

@@ -134,6 +134,48 @@ El siguiente objetivo será implementar el flujo completo de onboarding mediante
 
 ---
 
+# Versión 0.5.0
+
+## Novedades
+
+### Nuevas funcionalidades
+
+- Implementación completa del onboarding.
+- Componente reutilizable SelectionCard.
+- Pantalla final Ready.
+- Flujo conversacional de Nova.
+
+### Mejoras
+
+- Consistencia visual.
+- Reutilización de componentes.
+- Multiselección para intereses.
+- Preparación para Dashboard.
+
+### Documentación
+
+- Experiencia del usuario.
+- Dashboard - Mi recorrido.
+- Actualización de la Bitácora.
+
+## Estado del proyecto
+
+Actualmente Innova Mentor cuenta con:
+
+- Pantalla inicial
+- Registro
+- Inicio de sesión
+- Bienvenida de Nova
+- Objetivos
+- Dificultades
+- Tiempo
+- Intereses
+- Ready
+
+La siguiente etapa corresponde al desarrollo del Dashboard y la navegación completa mediante React Router.
+
+---
+
 ## Hito 5
 
 Integración de Firebase.

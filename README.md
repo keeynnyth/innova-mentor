@@ -130,7 +130,10 @@ Toda la documentación técnica y funcional de **Innova Mentor** se encuentra or
 * 📖 [07 - Guía del usuario](docs/07-guia-del-usuario.md)
 * 📓 [08 - Diario de desarrollo](docs/08-diario-de-desarrollo.md)
 * 📕 [09 - Bitácora del proyecto](docs/09-bitacora-del-proyecto.md)
-
+* 📕 [10 - Flujo de usuario](docs/10-flujo-de-usuario.md)
+* 📕 [11 - Guia de voz de Nova](docs/11-guia-de-voz-de-nova.md)
+* 📕 [12 - Experiencia del usuario](docs/12-experiencia-del-usuario.md)
+* 📕 [13 - Dashboard de mi recorrido](docs/13-dashboard-de-mi-recorrido.md)
 ### 👤 Guía del usuario
 
 Dentro de la carpeta **`docs/guia-usuario`** encontrarás las guías detalladas para comenzar a utilizar la aplicación:

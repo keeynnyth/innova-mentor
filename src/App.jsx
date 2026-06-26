@@ -1,8 +1,8 @@
 
-import Mentor from "./pages/Mentor/Mentor";
+import Ready from "./pages/Ready/Ready";
 
 function App() {
-  return <Mentor />;
+  return <Ready />;
 }
 
 export default App;
