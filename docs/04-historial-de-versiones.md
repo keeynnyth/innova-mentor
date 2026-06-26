@@ -93,6 +93,45 @@ Los siguientes hitos serán completados a medida que avance el desarrollo.
 
 Primer MVP funcional.
 
+# Versión 0.4.0
+
+## Fecha
+
+(26-06-2026)
+
+## Novedades
+
+### Nuevas funcionalidades
+
+* Implementación de la Pantalla de Bienvenida de Nova.
+* Inicio del flujo de onboarding del usuario.
+* Definición de la experiencia conversacional entre Nova y el usuario.
+* Consolidación de la identidad visual en las pantallas principales del proyecto.
+
+### Mejoras
+
+* Refinamiento del diseño visual de la pantalla de bienvenida.
+* Ajustes en la jerarquía visual y espaciado.
+* Mejora de la experiencia de usuario mediante un lenguaje más cercano y natural.
+
+### Documentación
+
+* Incorporación de la Guía de Voz de Nova (`11-guia-de-voz-de-nova.md`).
+* Actualización de la Bitácora del Proyecto.
+* Actualización del Historial de Versiones.
+
+## Estado del proyecto
+
+Actualmente el proyecto cuenta con:
+
+* ✅ Pantalla Inicial v2
+* ✅ Registro v2
+* ✅ Inicio de Sesión v2
+* ✅ Bienvenida de Nova v2
+
+El siguiente objetivo será implementar el flujo completo de onboarding mediante preguntas personalizadas para conocer los objetivos, necesidades e intereses del usuario.
+
+
 ---
 
 ## Hito 5

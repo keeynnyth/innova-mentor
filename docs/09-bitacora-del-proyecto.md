@@ -299,6 +299,42 @@ La Pantalla de Inicio de Sesión v2 quedó preparada para futuras integraciones 
 
 ---
 
+## Implementación de la Pantalla de Bienvenida de Nova
+
+### Objetivo
+
+Diseñar e implementar la primera pantalla del onboarding de Innova Mentor, presentando a Nova como mentora virtual e iniciando la conversación con el usuario antes de comenzar la personalización de su experiencia.
+
+### Cambios realizados
+
+* Se creó la pantalla de bienvenida en:
+
+  * `src/pages/Mentor/Mentor.jsx`
+  * `src/pages/Mentor/Mentor.css`
+
+* Se incorporó el avatar de Nova como elemento principal de la interfaz.
+
+* Se definió un mensaje de bienvenida alineado con la personalidad de Nova, priorizando un lenguaje cercano, cálido y motivador.
+
+* Se agregó una invitación para comenzar el recorrido mediante el botón:
+
+  **"Sí, empecemos"**
+
+### Decisiones de diseño
+
+* Se mantuvo la identidad visual definida para Home, Registro y Login, conservando la estructura basada en tarjeta, avatar, tipografía y botón principal.
+
+* Se priorizó una experiencia conversacional por sobre una pantalla meramente informativa.
+
+* Se adaptó el lenguaje al público objetivo argentino utilizando expresiones naturales, evitando modismos excesivos para facilitar una futura internacionalización.
+
+* Se reforzó el concepto de acompañamiento mediante frases que transmiten cercanía y colaboración entre Nova y el usuario.
+
+### Resultado
+
+La pantalla de Bienvenida de Nova quedó integrada al flujo de onboarding y establece el tono conversacional que acompañará al usuario durante toda la experiencia dentro de Innova Mentor.
+---
+
 # Próximas entradas
 
 Esta bitácora continuará creciendo junto con el proyecto.
