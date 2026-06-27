@@ -1,25 +1,24 @@
 
 import "./Register.css";
-import { useNavigate } from "react-router-dom";
-
 import avatarNova from "/branding/avatar-nova-hi.png";
 
-import PrimaryButton from "../../components/common/PrimaryButton/PrimaryButton";
+import useRegister from "../../hooks/useRegister";
 
 function Register() {
-  const navigate = useNavigate();
 
-  const handleRegister = (e) => {
-    e.preventDefault();
-
-    // Temporalmente simulamos un registro exitoso.
-    // Más adelante aquí irá la lógica de Firebase.
-    navigate("/mentor");
-  };
+  const {
+    formData,
+    error,
+    loading,
+    handleChange,
+    handleSubmit,
+  } = useRegister();
 
   return (
     <div className="register-container">
+
       <div className="register-card">
+
         <img
           src={avatarNova}
           alt="Nova"
@@ -36,49 +35,115 @@ function Register() {
 
         <form
           className="register-form"
-          onSubmit={handleRegister}
+          onSubmit={handleSubmit}
         >
+
+          <label
+            htmlFor="name"
+            className="register-label"
+          >
+            Nombre completo
+          </label>
+
           <input
+            id="name"
+            name="name"
             type="text"
-            placeholder="Nombre completo"
+            autoComplete="name"
+            value={formData.name}
+            onChange={handleChange}
             className="register-input"
           />
 
+          <label
+            htmlFor="email"
+            className="register-label"
+          >
+            Correo electrónico
+          </label>
+
           <input
+            id="email"
+            name="email"
             type="email"
-            placeholder="Correo electrónico"
+            autoComplete="email"
+            value={formData.email}
+            onChange={handleChange}
             className="register-input"
           />
+
+          <label
+            htmlFor="password"
+            className="register-label"
+          >
+            Contraseña
+          </label>
 
           <input
+            id="password"
+            name="password"
             type="password"
-            placeholder="Contraseña"
+            autoComplete="new-password"
+            value={formData.password}
+            onChange={handleChange}
             className="register-input"
           />
+
+          <label
+            htmlFor="confirmPassword"
+            className="register-label"
+          >
+            Confirmar contraseña
+          </label>
 
           <input
+            id="confirmPassword"
+            name="confirmPassword"
             type="password"
-            placeholder="Confirmar contraseña"
+            autoComplete="new-password"
+            value={formData.confirmPassword}
+            onChange={handleChange}
             className="register-input"
           />
 
-          <PrimaryButton
-            text="Crear cuenta"
+          {error && (
+
+            <div className="register-error">
+
+              {error}
+
+            </div>
+
+          )}
+
+          <button
             type="submit"
-          />
+            className="register-button"
+            disabled={loading}
+          >
+
+            {loading
+              ? "Creando cuenta..."
+              : "Crear cuenta"}
+
+          </button>
+
         </form>
 
         <p className="register-login-text">
+
           ¿Ya tienes una cuenta?
+
         </p>
 
-        <button
-          className="login-link"
-          onClick={() => navigate("/login")}
-        >
+        <button className="login-link">
+
           Iniciar sesión
+
         </button>
+
       </div>
+
     </div>
   );
 }

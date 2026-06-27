@@ -3,7 +3,7 @@ import "./Dashboard.css";
 import avatarNova from "/branding/avatar-nova-hi.png";
 
 import { useUser } from "../../contexts/UserContext";
-import { generateChallenge } from "../../services/challengeGenerator";
+import { generateChallenge } from "../../services/challenges/challengeGenerator";
 
 function Dashboard() {
 
