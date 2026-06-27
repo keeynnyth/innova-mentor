@@ -9,47 +9,39 @@ import avatarNova from "/branding/avatar-nova-hi.png";
 import SelectionCard from "../../components/SelectionCard/SelectionCard";
 import PrimaryButton from "../../components/common/PrimaryButton/PrimaryButton";
 
+import { useUser } from "../../contexts/UserContext";
+
 function Challenges() {
+
   const navigate = useNavigate();
+
+  const { updateProfile } = useUser();
 
   const [selectedChallenge, setSelectedChallenge] = useState(null);
 
   const challenges = [
-    {
-      id: 1,
-      icon: "🔥",
-      text: "Mantener la motivación",
-    },
-    {
-      id: 2,
-      icon: "⏰",
-      text: "Organizar mi tiempo",
-    },
-    {
-      id: 3,
-      icon: "💪",
-      text: "Ser constante",
-    },
-    {
-      id: 4,
-      icon: "📝",
-      text: "Recordar mis tareas",
-    },
-    {
-      id: 5,
-      icon: "🚫",
-      text: "Evitar la procrastinación",
-    },
+    { id: 1, icon: "🔥", text: "Mantener la motivación" },
+    { id: 2, icon: "⏰", text: "Organizar mi tiempo" },
+    { id: 3, icon: "💪", text: "Ser constante" },
+    { id: 4, icon: "📝", text: "Recordar mis tareas" },
+    { id: 5, icon: "🚫", text: "Evitar la procrastinación" },
   ];
 
-  const handleContinue = () => {
-    if (!selectedChallenge) return;
+  function handleContinue() {
+
+    const challenge = challenges.find(
+      (item) => item.id === selectedChallenge
+    );
+
+    updateProfile("challenge", challenge.text);
 
     navigate("/tiempo");
-  };
+
+  }
 
   return (
     <div className="challenges-container">
+
       <div className="challenges-card">
 
         <img
@@ -71,7 +63,9 @@ function Challenges() {
         </p>
 
         <div className="challenges-options">
+
           {challenges.map((challenge) => (
+
             <SelectionCard
               key={challenge.id}
               icon={challenge.icon}
@@ -79,7 +73,9 @@ function Challenges() {
               selected={selectedChallenge === challenge.id}
               onClick={() => setSelectedChallenge(challenge.id)}
             />
+
           ))}
+
         </div>
 
         <PrimaryButton
@@ -89,6 +85,7 @@ function Challenges() {
         />
 
       </div>
+
     </div>
   );
 }

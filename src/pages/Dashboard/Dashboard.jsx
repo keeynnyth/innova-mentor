@@ -2,9 +2,21 @@
 import "./Dashboard.css";
 import avatarNova from "/branding/avatar-nova-hi.png";
 
+import { useUser } from "../../contexts/UserContext";
+import { generateChallenge } from "../../services/challengeGenerator";
+
 function Dashboard() {
+
+  const { userProfile } = useUser();
+
+  const goal =
+    userProfile.goal || "crear nuevos hábitos";
+
+  const challenge = generateChallenge(userProfile);
+
   return (
     <div className="dashboard-container">
+
       <div className="dashboard-content">
 
         {/* Bienvenida */}
@@ -18,7 +30,7 @@ function Dashboard() {
           />
 
           <h1>
-            ¡Hola, Armando! 👋
+            ¡Hola! 👋
           </h1>
 
           <p className="welcome-message">
@@ -26,7 +38,7 @@ function Dashboard() {
           </p>
 
           <p className="welcome-message secondary">
-            Preparé un desafío especialmente para ayudarte a crear tu rutina de estudio.
+            Preparé un desafío especialmente para ayudarte a <strong>{goal.toLowerCase()}</strong>.
           </p>
 
         </section>
@@ -40,11 +52,15 @@ function Dashboard() {
           </span>
 
           <h2>
-            📖 Leer durante 15 minutos
+
+            {challenge.title}
+
           </h2>
 
           <p>
-            Elegí un artículo relacionado con Tecnología y dedicá unos minutos a leer con tranquilidad.
+
+            {challenge.description}
+
           </p>
 
           <button>
@@ -66,7 +82,9 @@ function Dashboard() {
           </div>
 
           <p>
-            Crear una rutina de estudio.
+
+            {goal}
+
           </p>
 
         </section>
@@ -88,7 +106,9 @@ function Dashboard() {
           </div>
 
           <span className="progress-text">
+
             70 % completado · ¡Vas muy bien!
+
           </span>
 
         </section>
@@ -104,16 +124,21 @@ function Dashboard() {
           </div>
 
           <p>
+
             7 días consecutivos
+
           </p>
 
           <p className="streak-message">
+
             ¡Seguí así! 💪
+
           </p>
 
         </section>
 
       </div>
+
     </div>
   );
 }

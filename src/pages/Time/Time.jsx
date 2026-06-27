@@ -9,42 +9,38 @@ import avatarNova from "/branding/avatar-nova-hi.png";
 import SelectionCard from "../../components/SelectionCard/SelectionCard";
 import PrimaryButton from "../../components/common/PrimaryButton/PrimaryButton";
 
+import { useUser } from "../../contexts/UserContext";
+
 function Time() {
+
   const navigate = useNavigate();
+
+  const { updateProfile } = useUser();
 
   const [selectedTime, setSelectedTime] = useState(null);
 
   const times = [
-    {
-      id: 1,
-      icon: "⏱️",
-      text: "Menos de 10 minutos",
-    },
-    {
-      id: 2,
-      icon: "⌛",
-      text: "Entre 10 y 20 minutos",
-    },
-    {
-      id: 3,
-      icon: "🕒",
-      text: "Entre 20 y 40 minutos",
-    },
-    {
-      id: 4,
-      icon: "📅",
-      text: "Más de 40 minutos",
-    },
+    { id: 1, icon: "⏱️", text: "Menos de 10 minutos" },
+    { id: 2, icon: "⌛", text: "Entre 10 y 20 minutos" },
+    { id: 3, icon: "🕒", text: "Entre 20 y 40 minutos" },
+    { id: 4, icon: "📅", text: "Más de 40 minutos" },
   ];
 
-  const handleContinue = () => {
-    if (!selectedTime) return;
+  function handleContinue() {
+
+    const time = times.find(
+      (item) => item.id === selectedTime
+    );
+
+    updateProfile("time", time.text);
 
     navigate("/intereses");
-  };
+
+  }
 
   return (
     <div className="time-container">
+
       <div className="time-card">
 
         <img
@@ -66,7 +62,9 @@ function Time() {
         </p>
 
         <div className="time-options">
+
           {times.map((time) => (
+
             <SelectionCard
               key={time.id}
               icon={time.icon}
@@ -74,7 +72,9 @@ function Time() {
               selected={selectedTime === time.id}
               onClick={() => setSelectedTime(time.id)}
             />
+
           ))}
+
         </div>
 
         <PrimaryButton
@@ -84,6 +84,7 @@ function Time() {
         />
 
       </div>
+
     </div>
   );
 }

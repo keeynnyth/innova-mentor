@@ -1,5 +1,4 @@
 
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -10,8 +9,13 @@ import avatarNova from "/branding/avatar-nova-hi.png";
 import SelectionCard from "../../components/SelectionCard/SelectionCard";
 import PrimaryButton from "../../components/common/PrimaryButton/PrimaryButton";
 
+import { useUser } from "../../contexts/UserContext";
+
 function Interests() {
+
   const navigate = useNavigate();
+
+  const { updateProfile } = useUser();
 
   const [selectedInterests, setSelectedInterests] = useState([]);
 
@@ -24,27 +28,41 @@ function Interests() {
     { id: 6, icon: "🌿", text: "Naturaleza" },
   ];
 
-  const toggleInterest = (id) => {
+  function toggleInterest(id) {
+
     if (selectedInterests.includes(id)) {
+
       setSelectedInterests(
         selectedInterests.filter((item) => item !== id)
       );
+
     } else {
+
       setSelectedInterests([
         ...selectedInterests,
-        id,
+        id
       ]);
-    }
-  };
 
-  const handleContinue = () => {
-    if (selectedInterests.length === 0) return;
+    }
+
+  }
+
+  function handleContinue() {
+
+    const selected = interests
+      .filter((item) => selectedInterests.includes(item.id))
+      .map((item) => item.text);
+
+    updateProfile("interests", selected);
 
     navigate("/listo");
-  };
+
+  }
 
   return (
+
     <div className="interests-container">
+
       <div className="interests-card">
 
         <img
@@ -63,11 +81,12 @@ function Interests() {
 
         <p className="interests-text">
           Podés elegir más de una opción.
-          Así podré recomendarte contenidos que realmente te interesen.
         </p>
 
         <div className="interests-options">
+
           {interests.map((interest) => (
+
             <SelectionCard
               key={interest.id}
               icon={interest.icon}
@@ -75,7 +94,9 @@ function Interests() {
               selected={selectedInterests.includes(interest.id)}
               onClick={() => toggleInterest(interest.id)}
             />
+
           ))}
+
         </div>
 
         <PrimaryButton
@@ -85,8 +106,11 @@ function Interests() {
         />
 
       </div>
+
     </div>
+
   );
+
 }
 
 export default Interests;
