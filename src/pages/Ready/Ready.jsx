@@ -1,11 +1,16 @@
 
 import "./Ready.css";
+import { useNavigate } from "react-router-dom";
+
 import avatarNova from "/branding/avatar-nova-hi.png";
 
+import PrimaryButton from "../../components/common/PrimaryButton/PrimaryButton";
+
 function Ready() {
+  const navigate = useNavigate();
+
   return (
     <div className="ready-container">
-
       <div className="ready-card">
 
         <img
@@ -57,12 +62,12 @@ function Ready() {
           ¿Comenzamos?
         </h2>
 
-        <button className="ready-button">
-          Comenzar mi recorrido
-        </button>
+        <PrimaryButton
+          text="Comenzar mi recorrido"
+          onClick={() => navigate("/mi-recorrido")}
+        />
 
       </div>
-
     </div>
   );
 }

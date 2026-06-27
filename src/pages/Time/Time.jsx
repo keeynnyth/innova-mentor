@@ -1,12 +1,16 @@
 
-
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import "./Time.css";
 
 import avatarNova from "/branding/avatar-nova-hi.png";
+
 import SelectionCard from "../../components/SelectionCard/SelectionCard";
+import PrimaryButton from "../../components/common/PrimaryButton/PrimaryButton";
 
 function Time() {
+  const navigate = useNavigate();
 
   const [selectedTime, setSelectedTime] = useState(null);
 
@@ -33,9 +37,14 @@ function Time() {
     },
   ];
 
+  const handleContinue = () => {
+    if (!selectedTime) return;
+
+    navigate("/intereses");
+  };
+
   return (
     <div className="time-container">
-
       <div className="time-card">
 
         <img
@@ -57,9 +66,7 @@ function Time() {
         </p>
 
         <div className="time-options">
-
           {times.map((time) => (
-
             <SelectionCard
               key={time.id}
               icon={time.icon}
@@ -67,20 +74,16 @@ function Time() {
               selected={selectedTime === time.id}
               onClick={() => setSelectedTime(time.id)}
             />
-
           ))}
-
         </div>
 
-        <button
-          className={`continue-button ${selectedTime ? "enabled" : ""}`}
+        <PrimaryButton
+          text="Continuar"
           disabled={!selectedTime}
-        >
-          Continuar
-        </button>
+          onClick={handleContinue}
+        />
 
       </div>
-
     </div>
   );
 }

@@ -1,9 +1,17 @@
 
-
 import "./Mentor.css";
+import { useNavigate } from "react-router-dom";
+
 import avatarNova from "/branding/avatar-nova-hi.png";
+import PrimaryButton from "../../components/common/PrimaryButton/PrimaryButton";
 
 function Mentor() {
+  const navigate = useNavigate();
+
+  const handleStart = () => {
+    navigate("/objetivos");
+  };
+
   return (
     <div className="mentor-container">
       <div className="mentor-card">
@@ -32,23 +40,24 @@ function Mentor() {
           Vamos a recorrer este camino juntos.
         </p>
 
-       <p className="mentor-text">
-         Antes de empezar,
-         <br />
-         quiero conocerte un poco
-         <br />
-         para poder acompañarte
-        <br />
-         de la mejor manera.
+        <p className="mentor-text">
+          Antes de empezar,
+          <br />
+          quiero conocerte un poco
+          <br />
+          para poder acompañarte
+          <br />
+          de la mejor manera.
         </p>
 
         <h3 className="mentor-question">
           ¿Empezamos?
         </h3>
 
-        <button className="mentor-button">
-          Sí, empecemos
-        </button>
+        <PrimaryButton
+          text="Sí, empecemos"
+          onClick={handleStart}
+        />
 
       </div>
     </div>

@@ -59,21 +59,7 @@
   border-color: #4F46E5;
 }
 
-.register-button {
-  margin-top: 10px;
-  padding: 14px;
-  border: none;
-  border-radius: 10px;
-  background-color: #4F46E5;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-}
 
-.register-button:hover {
-  opacity: 0.95;
-}
 
 .register-login-text {
   margin-top: 24px;
@@ -87,4 +73,8 @@
   font-weight: 600;
   cursor: pointer;
   margin-top: 6px;
+}
+
+.register-form .primary-button {
+  margin-top: 10px;
 }

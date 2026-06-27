@@ -1,13 +1,25 @@
 
-import './Register.css'
-import avatarNova from '/branding/avatar-nova-hi.png'
+import "./Register.css";
+import { useNavigate } from "react-router-dom";
+
+import avatarNova from "/branding/avatar-nova-hi.png";
+
+import PrimaryButton from "../../components/common/PrimaryButton/PrimaryButton";
 
 function Register() {
+  const navigate = useNavigate();
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+
+    // Temporalmente simulamos un registro exitoso.
+    // Más adelante aquí irá la lógica de Firebase.
+    navigate("/mentor");
+  };
+
   return (
     <div className="register-container">
-
       <div className="register-card">
-
         <img
           src={avatarNova}
           alt="Nova"
@@ -22,8 +34,10 @@ function Register() {
           Comencemos juntos tu camino de aprendizaje.
         </p>
 
-        <form className="register-form">
-
+        <form
+          className="register-form"
+          onSubmit={handleRegister}
+        >
           <input
             type="text"
             placeholder="Nombre completo"
@@ -48,27 +62,25 @@ function Register() {
             className="register-input"
           />
 
-          <button
+          <PrimaryButton
+            text="Crear cuenta"
             type="submit"
-            className="register-button"
-          >
-            Crear cuenta
-          </button>
-
+          />
         </form>
 
         <p className="register-login-text">
           ¿Ya tienes una cuenta?
         </p>
 
-        <button className="login-link">
+        <button
+          className="login-link"
+          onClick={() => navigate("/login")}
+        >
           Iniciar sesión
         </button>
-
       </div>
-
     </div>
-  )
+  );
 }
 
-export default Register
+export default Register;

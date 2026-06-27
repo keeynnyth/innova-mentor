@@ -1,4 +1,5 @@
 
+
 .interests-container {
   min-height: 100vh;
   display: flex;
@@ -40,28 +41,9 @@
 }
 
 .interests-options {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
   margin-top: 30px;
-}
-
-.continue-button {
-  width: 100%;
-  margin-top: 28px;
-  padding: 15px;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 600;
-  background: #D1D5DB;
-  color: white;
-  cursor: not-allowed;
-  transition: .25s;
-}
-
-.continue-button.enabled {
-  background: #4F46E5;
-  cursor: pointer;
-}
-
-.continue-button.enabled:hover {
-  background: #4338CA;
+  margin-bottom: 28px;
 }

@@ -59,32 +59,11 @@
   font-size: 24px;
   font-weight: 700;
 }
-
-.mentor-button {
-  width: 100%;
-  padding: 15px;
-  border: none;
-  border-radius: 10px;
-  background-color: #4F46E5;
-  color: #FFFFFF;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all .25s ease;
-}
-.mentor-button:focus-visible {
-    outline: 3px solid #26C6DA;
-    outline-offset: 3px;
+.primary-button {
+  margin-top: 8px;
 }
 
-.mentor-button:hover {
-  background-color: #4338CA;
-  transform: translateY(-1px);
-}
 
-.mentor-button:active {
-  transform: translateY(0);
-}
 
 @media (max-width: 480px) {
 

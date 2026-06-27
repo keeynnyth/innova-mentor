@@ -1,11 +1,16 @@
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import "./Goals.css";
 
 import avatarNova from "/branding/avatar-nova-hi.png";
+
 import SelectionCard from "../../components/SelectionCard/SelectionCard";
+import PrimaryButton from "../../components/common/PrimaryButton/PrimaryButton";
 
 function Goals() {
+  const navigate = useNavigate();
 
   const [selectedGoal, setSelectedGoal] = useState(null);
 
@@ -37,11 +42,15 @@ function Goals() {
     },
   ];
 
+  const handleContinue = () => {
+    if (!selectedGoal) return;
+
+    navigate("/desafios");
+  };
+
   return (
     <div className="goals-container">
-
       <div className="goals-card">
-
         <img
           src={avatarNova}
           alt="Nova"
@@ -52,18 +61,12 @@ function Goals() {
           ¿Qué te gustaría lograr?
         </h1>
 
-        <p className="goals-text">
+        <p className="goals-description">
           Contame cuál de estas opciones representa mejor tu objetivo.
         </p>
 
-        <p className="goals-text">
-          Así voy a poder acompañarte de una forma más personalizada.
-        </p>
-
         <div className="goals-options">
-
           {goals.map((goal) => (
-
             <SelectionCard
               key={goal.id}
               icon={goal.icon}
@@ -71,20 +74,15 @@ function Goals() {
               selected={selectedGoal === goal.id}
               onClick={() => setSelectedGoal(goal.id)}
             />
-
           ))}
-
         </div>
 
-        <button
-          className={`continue-button ${selectedGoal ? "enabled" : ""}`}
+        <PrimaryButton
+          text="Continuar"
           disabled={!selectedGoal}
-        >
-          Continuar
-        </button>
-
+          onClick={handleContinue}
+        />
       </div>
-
     </div>
   );
 }

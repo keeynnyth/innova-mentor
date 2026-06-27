@@ -1,14 +1,25 @@
 
+import "./Login.css";
+import { useNavigate } from "react-router-dom";
 
-import './Login.css'
-import avatarNova from '/branding/avatar-nova-hi.png'
+import avatarNova from "/branding/avatar-nova-hi.png";
+
+import PrimaryButton from "../../components/common/PrimaryButton/PrimaryButton";
 
 function Login() {
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    // Temporalmente simulamos un inicio de sesión exitoso.
+    // Más adelante aquí irá la autenticación con Firebase.
+    navigate("/mi-recorrido");
+  };
+
   return (
     <div className="login-container">
-
       <div className="login-card">
-
         <img
           src={avatarNova}
           alt="Nova"
@@ -23,8 +34,10 @@ function Login() {
           Me alegra verte de nuevo.
         </p>
 
-        <form className="login-form">
-
+        <form
+          className="login-form"
+          onSubmit={handleLogin}
+        >
           <input
             type="email"
             placeholder="Correo electrónico"
@@ -37,13 +50,10 @@ function Login() {
             className="login-input"
           />
 
-          <button
+          <PrimaryButton
+            text="Iniciar sesión"
             type="submit"
-            className="login-button"
-          >
-            Iniciar sesión
-          </button>
-
+          />
         </form>
 
         <button className="forgot-password-link">
@@ -54,14 +64,15 @@ function Login() {
           ¿No tienes una cuenta?
         </p>
 
-        <button className="register-link">
+        <button
+          className="register-link"
+          onClick={() => navigate("/registro")}
+        >
           Crear cuenta
         </button>
-
       </div>
-
     </div>
-  )
+  );
 }
 
-export default Login
+export default Login;

@@ -1,12 +1,17 @@
 
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import "./Interests.css";
 
 import avatarNova from "/branding/avatar-nova-hi.png";
+
 import SelectionCard from "../../components/SelectionCard/SelectionCard";
+import PrimaryButton from "../../components/common/PrimaryButton/PrimaryButton";
 
 function Interests() {
+  const navigate = useNavigate();
 
   const [selectedInterests, setSelectedInterests] = useState([]);
 
@@ -19,29 +24,27 @@ function Interests() {
     { id: 6, icon: "🌿", text: "Naturaleza" },
   ];
 
-  function toggleInterest(id) {
-
+  const toggleInterest = (id) => {
     if (selectedInterests.includes(id)) {
-
       setSelectedInterests(
-        selectedInterests.filter(item => item !== id)
+        selectedInterests.filter((item) => item !== id)
       );
-
     } else {
-
       setSelectedInterests([
         ...selectedInterests,
-        id
+        id,
       ]);
-
     }
+  };
 
-  }
+  const handleContinue = () => {
+    if (selectedInterests.length === 0) return;
+
+    navigate("/listo");
+  };
 
   return (
-
     <div className="interests-container">
-
       <div className="interests-card">
 
         <img
@@ -59,46 +62,31 @@ function Interests() {
         </p>
 
         <p className="interests-text">
-          Podés elegir más de una opción. Así podré recomendarte contenidos que realmente te interesen.
+          Podés elegir más de una opción.
+          Así podré recomendarte contenidos que realmente te interesen.
         </p>
 
         <div className="interests-options">
-
           {interests.map((interest) => (
-
             <SelectionCard
-
               key={interest.id}
-
               icon={interest.icon}
-
               text={interest.text}
-
               selected={selectedInterests.includes(interest.id)}
-
               onClick={() => toggleInterest(interest.id)}
-
             />
-
           ))}
-
         </div>
 
-        <button
-          className={`continue-button ${
-            selectedInterests.length > 0 ? "enabled" : ""
-          }`}
+        <PrimaryButton
+          text="Continuar"
           disabled={selectedInterests.length === 0}
-        >
-          Continuar
-        </button>
+          onClick={handleContinue}
+        />
 
       </div>
-
     </div>
-
   );
-
 }
 
 export default Interests;

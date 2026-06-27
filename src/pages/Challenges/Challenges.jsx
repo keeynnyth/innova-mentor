@@ -1,11 +1,16 @@
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import "./Challenges.css";
 
 import avatarNova from "/branding/avatar-nova-hi.png";
+
 import SelectionCard from "../../components/SelectionCard/SelectionCard";
+import PrimaryButton from "../../components/common/PrimaryButton/PrimaryButton";
 
 function Challenges() {
+  const navigate = useNavigate();
 
   const [selectedChallenge, setSelectedChallenge] = useState(null);
 
@@ -37,9 +42,14 @@ function Challenges() {
     },
   ];
 
+  const handleContinue = () => {
+    if (!selectedChallenge) return;
+
+    navigate("/tiempo");
+  };
+
   return (
     <div className="challenges-container">
-
       <div className="challenges-card">
 
         <img
@@ -61,9 +71,7 @@ function Challenges() {
         </p>
 
         <div className="challenges-options">
-
           {challenges.map((challenge) => (
-
             <SelectionCard
               key={challenge.id}
               icon={challenge.icon}
@@ -71,20 +79,16 @@ function Challenges() {
               selected={selectedChallenge === challenge.id}
               onClick={() => setSelectedChallenge(challenge.id)}
             />
-
           ))}
-
         </div>
 
-        <button
-          className={`continue-button ${selectedChallenge ? "enabled" : ""}`}
+        <PrimaryButton
+          text="Continuar"
           disabled={!selectedChallenge}
-        >
-          Continuar
-        </button>
+          onClick={handleContinue}
+        />
 
       </div>
-
     </div>
   );
 }

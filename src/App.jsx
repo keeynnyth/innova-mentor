@@ -1,8 +1,8 @@
 
-import Ready from "./pages/Ready/Ready";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
-  return <Ready />;
+  return <AppRoutes />;
 }
 
 export default App;

@@ -390,6 +390,16 @@ El proyecto cuenta ahora con un flujo completo de onboarding preparado para inte
 
 ---
 
+– Flujo completo del onboarding
+
+- Se conectó la navegación entre todas las pantallas del onboarding.
+- Se integró React Router en Home, Register, Login y Mentor.
+- Se incorporó PrimaryButton en todas las pantallas.
+- Se completó el flujo:
+  Home → Registro → Mentor → Objetivos → Desafíos → Tiempo → Intereses → Listo → Dashboard.
+- Se rediseñó el Dashboard para mejorar la jerarquía visual, el contraste y la experiencia de usuario.
+- Se dejó preparado el proyecto para comenzar la integración del UserContext.
+
 # Próximas entradas
 
 Esta bitácora continuará creciendo junto con el proyecto.
