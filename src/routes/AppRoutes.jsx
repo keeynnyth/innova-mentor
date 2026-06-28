@@ -11,38 +11,124 @@ import Time from "../pages/Time/Time";
 import Interests from "../pages/Interests/Interests";
 import Ready from "../pages/Ready/Ready";
 import Dashboard from "../pages/Dashboard/Dashboard";
+import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
+
+import ProtectedRoute from "../components/auth/ProtectedRoute";
+import PublicRoute from "../components/auth/PublicRoute";
 
 function AppRoutes() {
+
   return (
+
     <BrowserRouter>
+
       <Routes>
 
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            <PublicRoute>
+              <Home />
+            </PublicRoute>
+          }
+        />
 
-        <Route path="/registro" element={<Register />} />
+        <Route
+          path="/registro"
+          element={
+            <PublicRoute>
+              <Register />
+            </PublicRoute>
+          }
+        />
 
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/login"
+          element={
+            <PublicRoute>
+              <Login />
+            </PublicRoute>
+          }
+        />
 
-        <Route path="/mentor" element={<Mentor />} />
+        <Route
+          path="/recuperar-password"
+          element={
+            <PublicRoute>
+              <ForgotPassword />
+            </PublicRoute>
+          }
+        />
 
-        <Route path="/objetivos" element={<Goals />} />
+        <Route
+          path="/mentor"
+          element={
+            <ProtectedRoute>
+              <Mentor />
+            </ProtectedRoute>
+          }
+        />
 
-        <Route path="/desafios" element={<Challenges />} />
+        <Route
+          path="/objetivos"
+          element={
+            <ProtectedRoute>
+              <Goals />
+            </ProtectedRoute>
+          }
+        />
 
-        <Route path="/tiempo" element={<Time />} />
+        <Route
+          path="/desafios"
+          element={
+            <ProtectedRoute>
+              <Challenges />
+            </ProtectedRoute>
+          }
+        />
 
-        <Route path="/intereses" element={<Interests />} />
+        <Route
+          path="/tiempo"
+          element={
+            <ProtectedRoute>
+              <Time />
+            </ProtectedRoute>
+          }
+        />
 
-        <Route path="/listo" element={<Ready />} />
+        <Route
+          path="/intereses"
+          element={
+            <ProtectedRoute>
+              <Interests />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/listo"
+          element={
+            <ProtectedRoute>
+              <Ready />
+            </ProtectedRoute>
+          }
+        />
 
         <Route
           path="/mi-recorrido"
-          element={<Dashboard />}
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
         />
 
       </Routes>
+
     </BrowserRouter>
+
   );
+
 }
 
 export default AppRoutes;

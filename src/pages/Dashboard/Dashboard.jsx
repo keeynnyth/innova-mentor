@@ -1,18 +1,24 @@
 
 import "./Dashboard.css";
+
 import avatarNova from "/branding/avatar-nova-hi.png";
 
-import { useUser } from "../../contexts/UserContext";
+import useDashboard from "../../hooks/useDashboard";
+
 import { generateChallenge } from "../../services/challenges/challengeGenerator";
 
 function Dashboard() {
 
-  const { userProfile } = useUser();
+  const {
+    currentUser,
+    handleLogout,
+  } = useDashboard();
 
-  const goal =
-    userProfile.goal || "crear nuevos hábitos";
-
-  const challenge = generateChallenge(userProfile);
+  const challenge = generateChallenge({
+    goal: "Crear una rutina de estudio",
+    time: "Entre 10 y 20 minutos",
+    interests: ["Tecnología"],
+  });
 
   return (
     <div className="dashboard-container">
@@ -22,6 +28,13 @@ function Dashboard() {
         {/* Bienvenida */}
 
         <section className="welcome-card">
+
+          <button
+            className="logout-button"
+            onClick={handleLogout}
+          >
+            Cerrar sesión
+          </button>
 
           <img
             src={avatarNova}
@@ -38,7 +51,11 @@ function Dashboard() {
           </p>
 
           <p className="welcome-message secondary">
-            Preparé un desafío especialmente para ayudarte a <strong>{goal.toLowerCase()}</strong>.
+            Hoy preparé un desafío especialmente para vos.
+          </p>
+
+          <p className="user-email">
+            {currentUser?.email}
           </p>
 
         </section>
@@ -52,15 +69,11 @@ function Dashboard() {
           </span>
 
           <h2>
-
             {challenge.title}
-
           </h2>
 
           <p>
-
             {challenge.description}
-
           </p>
 
           <button>
@@ -74,17 +87,11 @@ function Dashboard() {
         <section className="info-card">
 
           <div className="card-header">
-
             <h3>🎯 Mi objetivo</h3>
-
-            <span>›</span>
-
           </div>
 
           <p>
-
-            {goal}
-
+            Crear una rutina de estudio.
           </p>
 
         </section>
@@ -94,21 +101,15 @@ function Dashboard() {
         <section className="info-card">
 
           <div className="card-header">
-
             <h3>📈 Mi progreso semanal</h3>
-
           </div>
 
           <div className="progress-bar">
-
             <div className="progress-value"></div>
-
           </div>
 
           <span className="progress-text">
-
             70 % completado · ¡Vas muy bien!
-
           </span>
 
         </section>
@@ -118,21 +119,15 @@ function Dashboard() {
         <section className="info-card">
 
           <div className="card-header">
-
             <h3>🔥 Mi racha</h3>
-
           </div>
 
           <p>
-
             7 días consecutivos
-
           </p>
 
           <p className="streak-message">
-
             ¡Seguí así! 💪
-
           </p>
 
         </section>

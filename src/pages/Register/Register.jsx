@@ -2,9 +2,12 @@
 import "./Register.css";
 import avatarNova from "/branding/avatar-nova-hi.png";
 
+import { useNavigate } from "react-router-dom";
 import useRegister from "../../hooks/useRegister";
 
 function Register() {
+
+  const navigate = useNavigate();
 
   const {
     formData,
@@ -107,13 +110,9 @@ function Register() {
           />
 
           {error && (
-
             <div className="register-error">
-
               {error}
-
             </div>
-
           )}
 
           <button
@@ -121,25 +120,22 @@ function Register() {
             className="register-button"
             disabled={loading}
           >
-
             {loading
               ? "Creando cuenta..."
               : "Crear cuenta"}
-
           </button>
 
         </form>
 
         <p className="register-login-text">
-
           ¿Ya tienes una cuenta?
-
         </p>
 
-        <button className="login-link">
-
+        <button
+          className="login-link"
+          onClick={() => navigate("/login")}
+        >
           Iniciar sesión
-
         </button>
 
       </div>

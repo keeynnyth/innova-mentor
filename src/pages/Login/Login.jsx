@@ -2,9 +2,12 @@
 import "./Login.css";
 import avatarNova from "/branding/avatar-nova-hi.png";
 
+import { useNavigate } from "react-router-dom";
 import useLogin from "../../hooks/useLogin";
 
 function Login() {
+
+  const navigate = useNavigate();
 
   const {
     formData,
@@ -73,13 +76,9 @@ function Login() {
           />
 
           {error && (
-
             <div className="login-error">
-
               {error}
-
             </div>
-
           )}
 
           <button
@@ -87,31 +86,29 @@ function Login() {
             className="login-button"
             disabled={loading}
           >
-
             {loading
               ? "Ingresando..."
               : "Iniciar sesión"}
-
           </button>
 
         </form>
 
-        <button className="forgot-password-link">
-
+        <button
+          className="forgot-password-link"
+          onClick={() => navigate("/recuperar-password")}
+        >
           ¿Olvidaste tu contraseña?
-
         </button>
 
         <p className="login-register-text">
-
           ¿No tienes una cuenta?
-
         </p>
 
-        <button className="register-link">
-
+        <button
+          className="register-link"
+          onClick={() => navigate("/registro")}
+        >
           Crear cuenta
-
         </button>
 
       </div>

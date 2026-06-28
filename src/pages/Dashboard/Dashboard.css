@@ -215,3 +215,45 @@
   }
 
 }
+
+.logout-button{
+
+  float:right;
+
+  border:none;
+
+  background:#EEF2FF;
+
+  color:#4F46E5;
+
+  padding:10px 14px;
+
+  border-radius:10px;
+
+  font-size:14px;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:.25s;
+
+  margin-bottom:20px;
+
+}
+
+.logout-button:hover{
+
+  background:#E0E7FF;
+
+}
+
+.user-email{
+
+  margin-top:18px;
+
+  color:#9CA3AF;
+
+  font-size:13px;
+
+}

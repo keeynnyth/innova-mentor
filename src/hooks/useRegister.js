@@ -1,7 +1,9 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import { useAuth } from "../contexts/AuthContext";
+
+import { createUserProfile } from "../services/firebase/firestoreService";
 
 export default function useRegister() {
 
@@ -73,14 +75,21 @@ export default function useRegister() {
 
       setLoading(true);
 
-      await signUp(
+      const userCredential = await signUp(
         formData.email,
         formData.password
+      );
+
+      await createUserProfile(
+        userCredential.user,
+        formData.name
       );
 
       navigate("/mentor");
 
     } catch (error) {
+
+      console.error(error);
 
       switch (error.code) {
 
