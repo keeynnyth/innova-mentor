@@ -6,30 +6,82 @@ import {
   useState,
 } from "react";
 
+import { useAuth } from "./AuthContext";
+
+import { getUserProfile } from "../services/firebase/firestoreService";
+
 const UserContext = createContext();
 
-const STORAGE_KEY = "innovaMentorUserProfile";
-
 const initialProfile = {
-  goal: "",
-  challenge: "",
-  time: "",
+
+  uid: "",
+
+  name: "",
+
+  email: "",
+
+  goal: null,
+
+  time: null,
+
   interests: [],
+
+  streak: 0,
+
+  weeklyProgress: 0,
+
 };
 
 export function UserProvider({ children }) {
 
-  const [userProfile, setUserProfile] = useState(() => {
+  const { currentUser } = useAuth();
 
-    const savedProfile = localStorage.getItem(STORAGE_KEY);
+  const [userProfile, setUserProfile] = useState(initialProfile);
 
-    if (savedProfile) {
-      return JSON.parse(savedProfile);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+
+    async function loadUserProfile() {
+
+      if (!currentUser) {
+
+        setUserProfile(initialProfile);
+
+        setLoading(false);
+
+        return;
+
+      }
+
+      try {
+
+        const profile = await getUserProfile(currentUser.uid);
+
+        if (profile) {
+
+          setUserProfile(profile);
+         
+        }
+
+      } catch (error) {
+
+        console.error(
+          "Error loading user profile:",
+          error
+        );
+
+      } finally {
+
+        setLoading(false);
+
+      }
+
     }
 
-    return initialProfile;
+    loadUserProfile();
 
-  });
+  }, [currentUser]);
 
   function updateProfile(field, value) {
 
@@ -49,23 +101,22 @@ export function UserProvider({ children }) {
 
   }
 
-  useEffect(() => {
-
-    localStorage.setItem(
-      STORAGE_KEY,
-      JSON.stringify(userProfile)
-    );
-
-  }, [userProfile]);
-
   return (
 
     <UserContext.Provider
+
       value={{
+
         userProfile,
+
         updateProfile,
+
         resetProfile,
+
+        loading,
+
       }}
+
     >
 
       {children}

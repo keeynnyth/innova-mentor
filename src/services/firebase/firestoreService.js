@@ -1,6 +1,7 @@
 
 import {
   doc,
+  getDoc,
   setDoc,
   serverTimestamp,
 } from "firebase/firestore";
@@ -38,5 +39,26 @@ export async function createUserProfile(user, name) {
     }
 
   );
+
+}
+
+export async function getUserProfile(uid) {
+
+  const documentReference = doc(
+    db,
+    "users",
+    uid
+  );
+
+  const documentSnapshot =
+    await getDoc(documentReference);
+
+  if (!documentSnapshot.exists()) {
+
+    return null;
+
+  }
+
+  return documentSnapshot.data();
 
 }
