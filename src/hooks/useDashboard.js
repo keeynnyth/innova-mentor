@@ -1,6 +1,8 @@
 
 import { useNavigate } from "react-router-dom";
+
 import { useAuth } from "../contexts/AuthContext";
+import { useUser } from "../contexts/UserContext";
 
 export default function useDashboard() {
 
@@ -10,6 +12,11 @@ export default function useDashboard() {
     currentUser,
     signOut,
   } = useAuth();
+
+  const {
+    userProfile,
+    loading,
+  } = useUser();
 
   async function handleLogout() {
 
@@ -30,6 +37,10 @@ export default function useDashboard() {
   return {
 
     currentUser,
+
+    userProfile,
+
+    loading,
 
     handleLogout,
 

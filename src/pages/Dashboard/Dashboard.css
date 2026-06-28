@@ -218,7 +218,9 @@
 
 .logout-button{
 
-  float:right;
+  display:block;
+
+  margin:22px auto 0;
 
   border:none;
 
@@ -226,9 +228,9 @@
 
   color:#4F46E5;
 
-  padding:10px 14px;
+  padding:12px 20px;
 
-  border-radius:10px;
+  border-radius:12px;
 
   font-size:14px;
 
@@ -237,8 +239,6 @@
   cursor:pointer;
 
   transition:.25s;
-
-  margin-bottom:20px;
 
 }
 
