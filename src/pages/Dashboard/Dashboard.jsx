@@ -7,6 +7,8 @@ import useDashboard from "../../hooks/useDashboard";
 
 import { generateChallenge } from "../../services/challenges/challengeGenerator";
 
+import Racha from "../Racha/Racha.jsx";
+
 function Dashboard() {
 
   const {
@@ -163,7 +165,11 @@ function Dashboard() {
 
         </section>
 
-        <section className="info-card">
+        {/* 💡 AQUÍ SE INVOCA EL COMPONENTE RACHA: */}
+        {/* Reemplaza toda la sección antigua de "Mi racha" por esta sola línea */}
+        <Racha diasRacha={userProfile.streak} />
+
+        {/* <section className="info-card">
 
           <div className="card-header">
 
@@ -183,7 +189,7 @@ function Dashboard() {
 
           </p>
 
-        </section>
+        </section> */}
 
       </div>
 

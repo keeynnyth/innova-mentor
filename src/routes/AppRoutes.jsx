@@ -12,6 +12,7 @@ import Interests from "../pages/Interests/Interests";
 import Ready from "../pages/Ready/Ready";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
+import Racha from "../pages/Racha/Racha";
 
 import ProtectedRoute from "../components/auth/ProtectedRoute";
 import PublicRoute from "../components/auth/PublicRoute";
