@@ -1,3 +1,9 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+// 1. Importamos tu componente de botón reutilizable
+import PrimaryButton from '../../components/common/PrimaryButton/PrimaryButton';
+
+import { Link } from "react-router-dom";
 
 import "./Dashboard.css";
 
@@ -10,6 +16,8 @@ import { generateChallenge } from "../../services/challenges/challengeGenerator"
 import Racha from "../Racha/Racha.jsx";
 
 function Dashboard() {
+
+  const navigate = useNavigate();
 
   const {
 
@@ -169,6 +177,14 @@ function Dashboard() {
         {/* Reemplaza toda la sección antigua de "Mi racha" por esta sola línea */}
         <Racha diasRacha={userProfile.streak} />
 
+        <div className="dashboard-actions" style={{ marginTop: '20px' }}>
+          <PrimaryButton 
+          text="Ver Progreso General"
+          onClick={() => navigate('/progreso')}
+          variant="primary" 
+          />
+        </div>
+
         {/* <section className="info-card">
 
           <div className="card-header">
@@ -193,6 +209,7 @@ function Dashboard() {
 
       </div>
 
+      
     </div>
 
   );

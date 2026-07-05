@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "../pages/Home/Home";
@@ -13,18 +12,16 @@ import Ready from "../pages/Ready/Ready";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
 import Racha from "../pages/Racha/Racha";
+// 1. Importamos el nuevo componente de Progreso
+import ProgresoGeneral from "../pages/Progress/ProgresoGeneral";
 
 import ProtectedRoute from "../components/auth/ProtectedRoute";
 import PublicRoute from "../components/auth/PublicRoute";
 
 function AppRoutes() {
-
   return (
-
     <BrowserRouter>
-
       <Routes>
-
         <Route
           path="/"
           element={
@@ -124,12 +121,20 @@ function AppRoutes() {
           }
         />
 
+        {/* 2. Añadimos la ruta protegida para el Progreso General */}
+        <Route
+          path="/progreso"
+          element={
+            <ProtectedRoute>
+              <ProgresoGeneral />
+            </ProtectedRoute>
+          }
+        />
+
       </Routes>
-
     </BrowserRouter>
-
   );
-
 }
 
 export default AppRoutes;
+
