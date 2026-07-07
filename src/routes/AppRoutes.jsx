@@ -6,6 +6,7 @@ import Login from "../pages/Login/Login";
 import Mentor from "../pages/Mentor/Mentor";
 import Goals from "../pages/Goals/Goals";
 import Challenges from "../pages/Challenges/Challenges";
+import Reto from "../pages/Challenges/Retos";
 import Time from "../pages/Time/Time";
 import Interests from "../pages/Interests/Interests";
 import Ready from "../pages/Ready/Ready";
@@ -78,7 +79,7 @@ function AppRoutes() {
 
         <Route
           path="/desafios"
-          element={
+          element={            
             <ProtectedRoute>
               <Challenges />
             </ProtectedRoute>
@@ -118,6 +119,15 @@ function AppRoutes() {
             <ProtectedRoute>
               <Dashboard />
             </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/reto"
+          element={
+            <ProtectedRoute>
+              <Reto desafios={5} /> 
+            </ProtectedRoute>            
           }
         />
 
