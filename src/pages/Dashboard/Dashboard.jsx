@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 import "./Dashboard.css";
 
-import avatarNova from "/branding/avatar-nova-hi.png";
+import avatarNova from "/branding/Avatar-Nova-Estrella.png";
 
 import useDashboard from "../../hooks/useDashboard";
 

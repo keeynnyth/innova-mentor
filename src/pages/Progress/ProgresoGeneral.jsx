@@ -2,13 +2,14 @@ import React from 'react';
 import Racha from '../Racha/Racha.jsx';
 import { TarjetasProgreso } from '../../components/common/ProgressCards/TarjetasProgreso.jsx';
 import './progreso.css';
+import avatarNova from "/branding/Avatar-Nova-Estrella.png";
 
 
 export default function ProgresoGeneral() {
   // Datos simulados para las métricas
   const datosUsuario = {
     racha: 3,
-    desafios: '1/5',
+    desafíos: '1/5',
     tareas: 10,
     tiempo: '4h 20m'
   };
@@ -25,8 +26,7 @@ export default function ProgresoGeneral() {
   ];
 
   return (
-    <main 
-    className="progreso-pagina-contenedor">
+    <main className="progreso-pagina-contenedor">
         {/* Encabezado de la Página: Título + Avatar alineados */}
       <header className="progreso-encabezado-pagina">
         
@@ -38,12 +38,17 @@ export default function ProgresoGeneral() {
 
         {/* Lado Derecho: Avatar y Mensaje Motivacional */}
         <div className="progreso-avatar-encabezado">
-          <div className="avatar-burbuja-mensaje">
+          {/* <div className="avatar-burbuja-mensaje">
             <p>"Vas increíble: La constancia de hoy es el éxito de mañana."</p>
-          </div>
+          </div> */}
           <div className="avatar-posicionamiento">
             <div className="avatar-circulo-temporal">
-              <span>🧑‍💻</span>
+              {/* Se incluye la imagen real de avatarNova en sustitución del emoji */}
+              <img 
+                src={avatarNova} 
+                alt="Avatar Nova" 
+                className="avatar-nova-img" 
+              />
             </div>
           </div>
         </div>
@@ -143,7 +148,13 @@ export default function ProgresoGeneral() {
           <p>"Vas increíble: La constancia de hoy es el éxito de mañana."</p>
         </div>
         <div className="avatar-contenedor">
-          <div className="avatar-circulo-temporal">🧑‍💻</div>
+          <div className="avatar-circulo-temporal">
+            <img 
+              src={avatarNova} 
+              alt="Avatar Nova" 
+              className="avatar-nova-img" 
+            />
+          </div>
         </div>
       </section>
     </main>

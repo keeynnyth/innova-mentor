@@ -42,11 +42,20 @@
 /* 2) Avatar de Estrella */
 .avatar-container {
     margin-bottom: 15px;
+    display: flex;       /* Convierte el contenedor en Flex */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: 100%;         /* Asegura q
 }
 .star-avatar {
-    font-size: 80px;
+    width: 100
+    px;  /* Ajusta el tamaño según tu diseño estilo Duolingo */
+    height: auto;
+    display: block;
+
+    /* font-size: 80px;
     display: inline-block;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; */
 }
 .star-avatar.animated {
     animation: pulse 2s infinite ease-in-out;

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './racha.css'; 
+import avatarNova from "/branding/Avatar-Nova-Estrella.png";
 
 export default function Racha({ diasRacha: rachaReal }) {
   // Estado interno temporal para la simulación. 
@@ -29,9 +30,13 @@ export default function Racha({ diasRacha: rachaReal }) {
 
       {/* Contenedor de Estrella y Número */}
       <div className="streak-stats-wrapper">
-        {/* 2) Avatar de Estrella */}
+        {/* 2) Avatar de Estrella (Sustituido por avatarNova) */}
         <div className="avatar-container">
-          <div className={`star-avatar ${rachaActiva ? 'animated' : 'grayed'}`}>⭐</div>
+          <img 
+            src={avatarNova} 
+            alt="Avatar Nova Estrella" 
+            className={`star-avatar ${rachaActiva ? 'animated' : 'grayed'}`} 
+          />
         </div>
 
         {/* 3) Contabilidad de los días */}
