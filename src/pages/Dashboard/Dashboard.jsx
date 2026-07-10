@@ -1,24 +1,22 @@
-import React from 'react';
+
+
+//Dashboard.jsx Modificado
+
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-// 1. Importamos tu componente de botón reutilizable
 import PrimaryButton from '../../components/common/PrimaryButton/PrimaryButton';
-
 import { Link } from "react-router-dom";
-
 import "./Dashboard.css";
-
 import avatarNova from "/branding/Avatar-Nova-Estrella.png";
-
 import useDashboard from "../../hooks/useDashboard";
-
 import { generateChallenge } from "../../services/challenges/challengeGenerator";
-
 import Racha from "../Racha/Racha.jsx";
-// Importamos el nuevo componente reutilizable de progreso
+
+// 💡 Importación unificada correcta
+import RachaNuevaView from "../Racha/RachaNuevaView"; 
 import { ProgresoSemanal } from '../../components/common/ProgressCards/ProgresoSemanal'; 
 
 function Dashboard() {
-
   const navigate = useNavigate();
 
   const {
@@ -27,6 +25,19 @@ function Dashboard() {
     loading,
     handleLogout,
   } = useDashboard();
+
+  // Estado para controlar la visibilidad del overlay
+  const [mostrarNuevaRacha, setMostrarNuevaRacha] = useState(false);
+
+  // Efecto automático basado en los datos reales del perfil
+  useEffect(() => {
+    if (!loading && userProfile) {
+      // Modificamos la condición para que si la racha se reinició (0 o 1) se dispare automáticamente
+      if (userProfile.streak === 1 || userProfile.streak === 0) {
+        setMostrarNuevaRacha(true);
+      }
+    }
+  }, [loading, userProfile]);
 
   if (loading) {
     return (
@@ -40,11 +51,34 @@ function Dashboard() {
     );
   }
 
+  // 🔥 INTERCEPCIÓN VISUAL: Si la bandera está activa, muestra la pantalla completa
+  if (mostrarNuevaRacha) {
+    return (
+      <RachaNuevaView onContinuar={() => setMostrarNuevaRacha(false)} />
+    );
+  }
+
   const challenge = generateChallenge(userProfile);
 
   return (
     <div className="dashboard-container">
       <div className="dashboard-content">
+        
+        {/* 🛠️ BOTÓN TEMPORAL DE PRUEBA */}
+        <div style={{ background: '#fff3cd', padding: '10px', borderRadius: '8px', marginBottom: '15px', textAlign: 'center', border: '1px solid #ffeeba' }}>
+          <span style={{ fontSize: '0.85rem', color: '#856404', marginRight: '10px' }}>🔧 Entorno de Desarrollo:</span>
+          <button 
+            onClick={() => setMostrarNuevaRacha(true)}
+            style={{ padding: '4px 12px', fontSize: '0.8rem', cursor: 'pointer', backgroundColor: '#856404', color: '#fff', border: 'none', borderRadius: '4px' }}
+          >
+            Forzar Vista "Nueva Racha"
+          </button>
+          <div style={{ fontSize: '0.75rem', color: '#6c757d', marginTop: '4px' }}>
+            <span>Racha actual en base de datos: </span>
+            {userProfile?.streak ?? 'undefined'}
+          </div>
+        </div>
+
         <section className="welcome-card">
           <img
             src={avatarNova}
@@ -96,11 +130,8 @@ function Dashboard() {
           </p>
         </section>
 
-        {/* 📈 REEMPLAZADO POR EL NUEVO COMPONENTE REUTILIZABLE */}
-        {/* Pasamos 'userProfile' completo ya que contiene tanto 'weeklyProgress' como 'desafios' */}
         <ProgresoSemanal datos={userProfile} />
 
-        {/* 💡 AQUÍ SE INVOCA EL COMPONENTE RACHA: */}
         <Racha diasRacha={userProfile.streak} />
 
         <div className="dashboard-actions" style={{ marginTop: '20px' }}>
@@ -111,9 +142,9 @@ function Dashboard() {
           />
         </div>
 
-      </div>
-    </div>
-  );
-}
+      </div> 
+    </div> 
+    );  // Cierra el return correctamente con el paréntesis
+} // Cierra la función principal function Dashboard()
 
 export default Dashboard;

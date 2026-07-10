@@ -131,6 +131,16 @@ function AppRoutes() {
           }
         />
 
+        {/* Nueva ruta protegida para gestionar el flujo de la Racha y sus metas */}
+        <Route
+          path="/racha"
+          element={
+            <ProtectedRoute>
+              <Racha />
+            </ProtectedRoute>
+          }
+        />
+
         {/* 2. Añadimos la ruta protegida para el Progreso General */}
         <Route
           path="/progreso"
@@ -140,7 +150,6 @@ function AppRoutes() {
             </ProtectedRoute>
           }
         />
-
       </Routes>
     </BrowserRouter>
   );
