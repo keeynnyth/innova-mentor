@@ -2,7 +2,7 @@ import React from 'react';
 import './nuevaRacha.css'; 
 import avatarNova from "/branding/Avatar-Nova-Estrella.png";
 
-export default function RachaNuevaView({ onContinuar }) {
+export default function RachaNuevaView({ onContinuar, onCerrar }) {
   // Al ser el día 1 de regreso, la racha comienza en 1
   const diaUno = 1;
   const diasSemana = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
@@ -57,11 +57,22 @@ export default function RachaNuevaView({ onContinuar }) {
           })}
         </div>
 
-        {/* Botón de acción principal estilo Duolingo */}
-        <div className="new-streak-actions">
+        {/* Botones de acción inferiores */}
+        <div className="new-streak-actions vertical-actions">
           <button className="btn-continue-streak" onClick={onContinuar}>
-            ¡Vamos por más!
+            ¡Vamos a configurar mi meta!
           </button>
+          
+          {/* 2. Incluimos el botón para cerrar el componente y ver el Dashboard limpio */}
+          {onCerrar && (
+            <button 
+              className="btn-cancel-streak" 
+              style={{ marginTop: '8px', border: '2px solid #e5e5e5' }} 
+              onClick={onCerrar}
+            >
+              Ir al Dashboard directo
+            </button>
+          )}
         </div>
 
       </section>

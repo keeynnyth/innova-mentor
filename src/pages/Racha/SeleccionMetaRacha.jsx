@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import './nuevaRacha.css'; // Mantenemos tu archivo de estilos de referencia
+import { useNavigate } from 'react-router-dom'; // 1. Importamos useNavigate
+import './nuevaRacha.css'; 
 import avatarNova from "/branding/Avatar-Nova-Estrella.png";
 
 export default function SeleccionMetaRacha({ onMetaSeleccionada, onCancelar }) {
+  const navigate = useNavigate(); // 2. Inicializamos el hook para la navegación
+
   // Configuración de la escala de metas
   const opcionesMetas = [
     { dias: 7, premios: 5, dificultad: "Relajado", badgeColor: "#5af", motivacion: "¡Ideal para asegurar el hábito!" },
@@ -39,6 +42,9 @@ export default function SeleccionMetaRacha({ onMetaSeleccionada, onCancelar }) {
               src={avatarNova} 
               alt="Avatar Nova Estrella" 
               className="star-avatar animated pulse-effect" 
+              // Al hacer clic en el avatar, también da una ruta de escape amigable al Dashboard
+              onClick={() => navigate('/dashboard')} 
+              style={{ cursor: 'pointer' }}
             />
           </div>
           <div className="new-streak-number-wrapper">
@@ -96,6 +102,15 @@ export default function SeleccionMetaRacha({ onMetaSeleccionada, onCancelar }) {
               Configurar después
             </button>
           )}
+
+          {/* 3. Nuevo botón con la estética secundaria para volver al Dashboard */}
+          <button 
+            className="btn-cancel-streak" 
+            style={{ marginTop: '8px', border: '2px solid #e5e5e5' }} 
+            onClick={() => navigate('/mi-recorrido')}
+          >
+            Volver al Dashboard
+          </button>
         </div>
 
       </section>

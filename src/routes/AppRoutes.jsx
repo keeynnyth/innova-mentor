@@ -15,6 +15,7 @@ import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
 import Racha from "../pages/Racha/Racha";
 // 1. Importamos el nuevo componente de Progreso
 import ProgresoGeneral from "../pages/Progress/ProgresoGeneral";
+import SeleccionMetaRacha from "../pages/Racha/SeleccionMetaRacha";
 
 import ProtectedRoute from "../components/auth/ProtectedRoute";
 import PublicRoute from "../components/auth/PublicRoute";
@@ -138,6 +139,15 @@ function AppRoutes() {
             <ProtectedRoute>
               <Racha />
             </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/configurar-meta"
+          element={
+          <ProtectedRoute>
+              <SeleccionMetaRacha />
+          </ProtectedRoute>
           }
         />
 
