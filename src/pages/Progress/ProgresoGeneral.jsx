@@ -4,9 +4,7 @@ import { TarjetasProgreso } from '../../components/common/ProgressCards/Tarjetas
 import './progreso.css';
 import avatarNova from "/branding/Avatar-Nova-Estrella.png";
 
-
 export default function ProgresoGeneral() {
-  // Datos simulados para las métricas
   const datosUsuario = {
     racha: 3,
     desafíos: '1/5',
@@ -14,7 +12,6 @@ export default function ProgresoGeneral() {
     tiempo: '4h 20m'
   };
 
-  // Datos simulados para el gráfico semanal
   const diasSemana = [
     { dia: 'Lun', horas: 1.5, porcentaje: '50%' },
     { dia: 'Mar', horas: 2, porcentaje: '66%' },
@@ -26,137 +23,124 @@ export default function ProgresoGeneral() {
   ];
 
   return (
-    <main className="progreso-pagina-contenedor">
-        {/* Encabezado de la Página: Título + Avatar alineados */}
-      <header className="progreso-encabezado-pagina">
+    /* 1. Contenedor principal que centra todo horizontalmente */
+    <div className="dashboard-container">
+      
+      {/* 2. Contenedor que delimita el ancho exacto (max-width: 430px) */}
+      <div className="dashboard-content">
         
-        {/* Lado Izquierdo: Títulos */}
-        <div className="progreso-titulos-bloque">
-          <h1 className="progreso-titulo-principal">Tu Progreso</h1>
-          <p className="progreso-descripcion-principal">Cada paso te acerca a los objetivos.</p>
-        </div>
+        <main className="progreso-pagina-contenedor">
+          
+          {/* Encabezado: Título + Avatar */}
+          <header className="progreso-encabezado-pagina">
+            <div className="progreso-titulos-bloque">
+              <h1 className="progreso-titulo-principal">Tu progreso</h1>
+              <p className="progreso-descripcion-principal">Cada paso te acerca a los objetivos.</p>
+            </div>
 
-        {/* Lado Derecho: Avatar y Mensaje Motivacional */}
-        <div className="progreso-avatar-encabezado">
-          {/* <div className="avatar-burbuja-mensaje">
-            <p>"Vas increíble: La constancia de hoy es el éxito de mañana."</p>
-          </div> */}
-          <div className="avatar-posicionamiento">
-            <div className="avatar-circulo-temporal">
-              {/* Se incluye la imagen real de avatarNova en sustitución del emoji */}
+            <div className="progreso-avatar-encabezado">
               <img 
-                src={avatarNova} 
+                src="/branding/Avatar-Estrella-Asombro.png" 
                 alt="Avatar Nova" 
                 className="avatar-nova-img" 
               />
             </div>
-          </div>
-        </div>
+          </header>
 
-      </header>
+          {/* 1. Resumen General */}
+          <section className="seccion-progreso">
+            <h2 className="seccion-titulo-bloque">Resumen General</h2>
+            <TarjetasProgreso datos={datosUsuario} />
+          </section>
 
-      {/* Componente de la racha actual */}
-      {/* <Racha /> */}
-
-      {/* 1. Bloque de Métricas Principales */}
-      {/* <section className="seccion-progreso">
-        <TarjetasProgreso datos={datosUsuario} />
-      </section> */}
-
-      <section className="seccion-progreso">
-        <h2 className="seccion-titulo-bloque">Resumen General</h2>
-        <TarjetasProgreso datos={datosUsuario} />
-      </section>
-
-      {/* 2. Gráfico: Tu Avance */}
-      <section className="seccion-progreso grafico-seccion">
-        <h2 className="seccion-titulo">Tu avance</h2>
-        <p className="seccion-subtitulo">Horas dedicadas a estudiar esta semana</p>
-        
-        <div className="grafico-contenedor-global">
-          
-          {/* Escala del eje Y (Tiempos) */}
-          <div className="grafico-escala-y">
-            <span>3h</span>
-            <span>2h</span>
-            <span>1h</span>
-            <span>0h</span>
-          </div>
-
-          {/* Contenedor de las barras */}
-          <div className="grafico-barras-contenedor">
-            {diasSemana.map((item, index) => (
-              <div key={index} className="grafico-columna">
-                <div className="grafico-barra-wrapper">
-                  <div className="grafico-barra-valor">{item.horas}h</div>
-                  <div 
-                    className={`grafico-barra-relleno ${item.horas > 0 ? 'activo' : ''}`} 
-                    style={{ height: item.porcentaje }}
-                  ></div>
-                </div>
-                <span className="grafico-dia-etiqueta">{item.dia}</span>
+          {/* 2. Gráfico: Tu Avance */}
+          <section className="seccion-progreso">
+            <h2 className="seccion-titulo-bloque">Tu avance</h2>
+            <p className="seccion-subtitulo">Horas dedicadas a estudiar esta semana</p>
+            
+            <div className="grafico-contenedor-global">
+              <div className="grafico-escala-y">
+                <span>3h</span>
+                <span>2h</span>
+                <span>1h</span>
+                <span>0h</span>
               </div>
-            ))}
-          </div>
 
-        </div>
-      </section>
-
-      {/* 3. Resumen de Logros (4 Tarjetas) */}
-      <section className="seccion-progreso">
-        <h2 className="seccion-titulo">Logros conseguidos</h2>
-        <div className="logros-cuadricula">
-          
-          <div className="tarjeta-logro">
-            <div className="logro-icono">🏆</div>
-            <div className="logro-info">
-              <h3>Primer desafío</h3>
-              <p>Completa tu primer desafío diario</p>
+              <div className="grafico-barras-contenedor">
+                {diasSemana.map((item, index) => (
+                  <div key={index} className="grafico-columna">
+                    <div className="grafico-barra-wrapper">
+                      <div className="grafico-barra-valor">{item.horas}h</div>
+                      <div 
+                        className={`grafico-barra-relleno ${item.horas > 0 ? 'activo' : ''}`} 
+                        style={{ height: item.porcentaje }}
+                      ></div>
+                    </div>
+                    <span className="grafico-dia-etiqueta">{item.dia}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          </section>
 
-          <div className="tarjeta-logro">
-            <div className="logro-icono">🔥</div>
-            <div className="logro-info">
-              <h3>3 días seguidos</h3>
-              <p>Mantuviste tu racha por 3 días</p>
+          {/* 3. Resumen de Logros */}
+          <section className="seccion-progreso">
+            <h2 className="seccion-titulo-bloque">Logros</h2>
+            <div className="logros-cuadricula">
+              <div className="tarjeta-logro">
+                <div className="logro-icono">🏆</div>
+                <div className="logro-info">
+                  <h3>Primer desafío</h3>
+                  <p>Completa tu primer desafío diario</p>
+                </div>
+              </div>
+
+              <div className="tarjeta-logro">
+                <div className="logro-icono">🔥</div>
+                <div className="logro-info">
+                  <h3>3 días seguidos</h3>
+                  <p>Mantuviste tu racha por 3 días</p>
+                </div>
+              </div>
+
+              <div className="tarjeta-logro">
+                <div className="logro-icono">✅</div>
+                <div className="logro-info">
+                  <h3>10 tareas</h3>
+                  <p>Completaste 10 tareas</p>
+                </div>
+              </div>
+
+              <div className="tarjeta-logro">
+                <div className="logro-icono">🧭</div>
+                <div className="logro-info">
+                  <h3>Explorador</h3>
+                  <p>Viste 5 videos recomendados</p>
+                </div>
+              </div>
             </div>
-          </div>
+          </section>
 
-          <div className="tarjeta-logro">
-            <div className="logro-icono">✅</div>
-            <div className="logro-info">
-              <h3>10 tareas</h3>
-              <p>Completaste 10 tareas</p>
+          {/* 4. Sección Final: Avatar y Mensaje Motivacional */}
+          <section className="seccion-progreso avatar-motivacion-contenedor">
+          {/* 1. Primero el Avatar (Izquierda) */}
+            <div className="progreso-avatar-encabezado">
+              <img 
+                src="/branding/Avatar-Nova-EstrellaOjoCerrado.png" 
+                alt="Avatar Nova" 
+                className="avatar-nova-img" 
+              />
             </div>
-          </div>
 
-          <div className="tarjeta-logro">
-            <div className="logro-icono">🧭</div>
-            <div className="logro-info">
-              <h3>Explorador</h3>
-              <p>Viste 5 videos recomendados</p>
+            {/* 2. Luego el Mensaje (Derecha) */}
+            <div className="avatar-burbuja-mensaje">
+              <p>¡Vas increíble!</p>
+              <p>La constancia de hoy es el éxito de mañana</p>
             </div>
-          </div>
+          </section>
 
-        </div>
-      </section>
-
-      {/* 4. Sección Final: Avatar y Mensaje Motivacional */}
-      <section className="seccion-progreso avatar-motivacion-contenedor">
-        <div className="avatar-burbuja-mensaje">
-          <p>"Vas increíble: La constancia de hoy es el éxito de mañana."</p>
-        </div>
-        <div className="avatar-contenedor">
-          <div className="avatar-circulo-temporal">
-            <img 
-              src={avatarNova} 
-              alt="Avatar Nova" 
-              className="avatar-nova-img" 
-            />
-          </div>
-        </div>
-      </section>
-    </main>
+        </main>
+      </div>
+    </div>
   );
 }

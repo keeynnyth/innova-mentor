@@ -1,6 +1,7 @@
 /* Contenedor de la fila completa */
 .metricas-fila {
   display: flex;
+  flex-wrap: wrap; /* <-- ESTA ES LA CORRECCIÓN */
   gap: 16px;
   width: 100%;
   margin-bottom: 24px;
@@ -19,11 +20,11 @@
   align-items: center;
   background-color: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 16px;
   flex: 1;
   min-width: 220px; /* Evita que se aplasten demasiado */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
 }
 

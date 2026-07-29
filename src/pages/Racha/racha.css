@@ -26,6 +26,15 @@
     border: 2px solid #333;
 }
 
+.streak-stats-wrapper {
+  display: flex;
+  flex-direction: column; /* Apila la estrella y el número verticalmente */
+  align-items: center;    /* <-- ESTO centrará todo horizontalmente */
+  justify-content: center;
+  width: 100%;            /* Asegura que abarque todo el ancho del recuadro */
+  margin: 0 auto;
+}
+
 /* 1) Mensajes */
 .message-container h2 {
     margin: 0 0 10px 0;
@@ -41,30 +50,39 @@
 
 /* 2) Avatar de Estrella */
 .avatar-container {
-    margin-bottom: 15px;
-    display: flex;       /* Convierte el contenedor en Flex */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    width: 100%;         /* Asegura q
+  display: flex;              /* Activa Flexbox para manipular los hijos */
+  justify-content: center;    /* Centra horizontalmente el avatar */
+  align-items: center;        /* Centra verticalmente */
+  width: 100%;                /* Ocupa todo el ancho disponible para poder centrar */
+  margin-bottom: 15px;
 }
-.star-avatar {
-    width: 100
-    px;  /* Ajusta el tamaño según tu diseño estilo Duolingo */
-    height: auto;
-    display: block;
 
-    /* font-size: 80px;
-    display: inline-block;
-    transition: transform 0.3s ease; */
+.star-avatar {
+  width: 250px;               /* CORREGIDO: Todo en una sola línea y sin espacios */
+  height: auto;
+  display: block;
+  margin: 0 auto;             /* Refuerzo de seguridad para centrar la imagen */
 }
+
 .star-avatar.animated {
-    animation: pulse 2s infinite ease-in-out;
+  animation: pulse 2s infinite ease-in-out;
 }
+
 .star-avatar.grayed {
-    filter: grayscale(1) opacity(0.4);
+  filter: grayscale(1) opacity(0.4);
 }
 
 /* 3) Contador de Días */
+/* --- NUEVO: Centra el contenedor completo --- */
+.streak-number-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centra horizontalmente los elementos */
+    justify-content: center;
+    width: 100%;            /* Abarca todo el ancho disponible */
+    text-align: center;     /* Asegura el centrado del texto */
+}
+
 .streak-count {
     font-size: 3.5rem;
     font-weight: bold;

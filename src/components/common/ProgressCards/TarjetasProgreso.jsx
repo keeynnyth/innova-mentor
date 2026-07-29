@@ -1,5 +1,5 @@
 import React from 'react';
-import './tarjetasProgreso.css';
+import './TarjetasProgreso.css';
 
 export const TarjetasProgreso = ({ datos }) => {
   // Valores por defecto en caso de que falte alguna propiedad en el prop 'datos'
