@@ -55,28 +55,59 @@
 }
 
 /* Enfoque en las estadísticas */
-.new-streak-stats-wrapper {
+/* .new-streak-stats-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
   margin-bottom: 35px;
+} */
+
+/* Enfoque en las estadísticas */
+.new-streak-stats-wrapper {
+display: flex;
+flex-direction: column;
+align-items: center;     
+justify-content: center; 
+text-align: center;      
+width: 100%;             
+gap: 15px;
+margin-bottom: 35px;
 }
 
-.new-streak-count {
+/* .new-streak-count {
   font-size: 4.5rem;
   font-weight: 900;
   color: #ff9600; /* Color enérgico de racha activa */
-  line-height: 1;
+  /* line-height: 1; */
+/* } */ 
+
+.new-streak-count {
+font-size: 4.5rem;
+font-weight: 900;
+color: #ff9600; 
+line-height: 1;
+text-align: center;      
 }
 
-.new-streak-label {
+/* .new-streak-label {
   font-size: 1.1rem;
   font-weight: 700;
   color: #afafaf;
   text-transform: uppercase;
   letter-spacing: 0.8px;
   margin-top: 5px;
+} */
+
+
+.new-streak-label {
+font-size: 1.1rem;
+font-weight: 700;
+color: #afafaf;
+text-transform: uppercase;
+letter-spacing: 0.8px;
+margin-top: 5px;
+text-align: center;    
 }
 
 /* Vista previa de la semana */

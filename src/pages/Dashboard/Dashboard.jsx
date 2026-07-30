@@ -69,7 +69,7 @@ function Dashboard() {
       <div className="dashboard-content">
         <section className="welcome-card">
           <img
-            src={avatarNova}
+            src="/branding/Nova avatar1.png" 
             alt="Nova"
             className="dashboard-avatar"
           />

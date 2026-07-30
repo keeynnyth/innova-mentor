@@ -33,7 +33,7 @@ export default function Racha({ diasRacha: rachaReal }) {
         {/* 2) Avatar de Estrella (Sustituido por avatarNova) */}
         <div className="avatar-container">
           <img 
-            src={avatarNova} 
+            src="/branding/Nova avatar4.png"
             alt="Avatar Nova Estrella" 
             className={`star-avatar ${rachaActiva ? 'animated' : 'grayed'}`} 
           />

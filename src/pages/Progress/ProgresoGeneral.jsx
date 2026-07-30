@@ -40,7 +40,7 @@ export default function ProgresoGeneral() {
 
             <div className="progreso-avatar-encabezado">
               <img 
-                src="/branding/Avatar-Estrella-Asombro.png" 
+                src="/branding/Nova avatar3.png"  
                 alt="Avatar Nova" 
                 className="avatar-nova-img" 
               />
@@ -126,7 +126,7 @@ export default function ProgresoGeneral() {
           {/* 1. Primero el Avatar (Izquierda) */}
             <div className="progreso-avatar-encabezado">
               <img 
-                src="/branding/Avatar-Nova-EstrellaOjoCerrado.png" 
+                src="/branding/Nova avatar3.png"  
                 alt="Avatar Nova" 
                 className="avatar-nova-img" 
               />

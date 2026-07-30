@@ -28,7 +28,7 @@ export default function RachaNuevaView({ onContinuar, onCerrar }) {
         <div className="new-streak-stats-wrapper">
           <div className="avatar-pulse-container">
             <img 
-              src={avatarNova} 
+              src="/branding/Nova avatar3.png" 
               alt="Avatar Nova Estrella" 
               className="star-avatar animated pulse-effect" 
             />

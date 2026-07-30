@@ -39,7 +39,7 @@ export default function SeleccionMetaRacha({ onMetaSeleccionada, onCancelar }) {
         <div className="new-streak-stats-wrapper selector-avatar-margin">
           <div className="avatar-pulse-container">
             <img 
-              src={avatarNova} 
+              src="/branding/Nova avatar3.png" 
               alt="Avatar Nova Estrella" 
               className="star-avatar animated pulse-effect" 
               // Al hacer clic en el avatar, también da una ruta de escape amigable al Dashboard
