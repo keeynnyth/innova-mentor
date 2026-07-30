@@ -1,0 +1,301 @@
+/* =========================================================
+   Contenedor Principal (Mobile-First)
+========================================================= */
+.home-container {
+  width: 100%;
+  max-width: 430px; /* Ancho estándar móvil */
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 24px 20px 100px 20px; /* Espacio inferior para el navbar */
+  background-color: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  position: relative;
+}
+
+/* =========================================================
+   Cabecera y Mascota
+========================================================= */
+.home-header {
+  margin-bottom: 24px;
+}
+
+.home-greeting {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 16px 0;
+}
+
+.home-greeting em {
+  font-style: italic;
+}
+
+.home-hero-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.speech-bubble {
+  background-color: #ffffff;
+  border: 2px solid #1a1a1a;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  position: relative;
+  max-width: 170px;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* Pico de la burbuja de chat */
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  right: 24px;
+  border-width: 10px 10px 0 0;
+  border-style: solid;
+  border-color: #1a1a1a transparent;
+  display: block;
+  width: 0;
+}
+
+.home-avatar {
+  width: 85px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* =========================================================
+   Contenido y Tarjetas
+========================================================= */
+.home-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.home-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.home-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+}
+
+.home-card-empty-text {
+  font-size: 0.9rem;
+  color: #4a4a4a;
+  margin: 0 0 16px 0;
+}
+
+/* Tarjeta de Desafío */
+.challenge-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.challenge-icon {
+  font-size: 2.2rem;
+}
+
+.challenge-text {
+  font-size: 1rem;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.4;
+}
+
+
+.task-item {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 14px; 
+background-color: #f8f8f8;
+border: 1px solid #ebebeb;
+border-radius: 12px;
+margin-bottom: 16px;
+}
+
+
+.task-text {
+font-size: 0.95rem;
+color: #1a1a1a;
+font-weight: 500;
+}
+
+.pdf-item {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 14px;
+background-color: #f8f8f8;
+border: 1px solid #ebebeb;
+border-radius: 12px;
+margin-bottom: 16px;
+}
+
+.pdf-text {
+font-size: 0.95rem;
+color: #1a1a1a;
+font-weight: 500;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis; 
+margin-right: 12px;
+}
+
+
+.pdf-listen-btn {
+background-color: #5c5855;
+color: #ffffff;
+border: none;
+border-radius: 20px; 
+padding: 6px 14px;
+font-size: 0.85rem;
+font-weight: 600;
+cursor: pointer;
+transition: opacity 0.2s ease;
+flex-shrink: 0; 
+}
+
+.pdf-listen-btn:active {
+opacity: 0.8;
+}
+
+
+.task-check-btn {
+width: 24px;
+height: 24px;
+border-radius: 50%;
+border: 2px solid #8e8a86;
+background-color: transparent;
+cursor: pointer;
+transition: all 0.2s ease;
+padding: 0;
+flex-shrink: 0; 
+}
+
+
+.task-check-btn:active {
+background-color: #d8d8d8;
+}
+
+
+/* =========================================================
+   Botones
+========================================================= */
+.home-btn-primary {
+  width: 100%;
+  padding: 14px;
+  background-color: #5c5855; /* Color gris/marrón oscuro de la referencia */
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.home-btn-primary:active {
+  opacity: 0.85;
+}
+
+.home-btn-dashed {
+  width: 100%;
+  padding: 14px;
+  background-color: transparent;
+  color: #5c5855;
+  border: 1.5px dashed #8e8a86;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.home-btn-dashed:active {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.btn-icon {
+  font-size: 1.1rem;
+}
+
+/* =========================================================
+   Barra de Navegación Inferior (Bottom Navbar)
+========================================================= */
+.bottom-navbar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;
+  height: 74px;
+  background-color: #d8d8d8; /* Fondo gris redondeado inferior */
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 16px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.nav-item {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #4a4a4a;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+}
+
+.nav-item:active {
+  transform: scale(0.92);
+}
+
+.nav-item.active {
+  color: #000000;
+}
+
+/* Botón Central "+" */
+.nav-item-add {
+  background-color: #7a7774;
+  color: #ffffff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 0;
+}

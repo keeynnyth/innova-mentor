@@ -104,9 +104,11 @@ function Dashboard() {
           <p>
             {challenge.description}
           </p>
-          <button>
-            Comenzar desafío →
-          </button>
+          <PrimaryButton 
+            text="Comenzar desafío →"
+            onClick={() => navigate('/primerPaso')}
+            variant="primary" 
+          />
         </section>
 
         <section className="info-card">
