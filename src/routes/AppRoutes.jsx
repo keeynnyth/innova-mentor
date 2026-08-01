@@ -19,6 +19,7 @@ import Racha from "../pages/Racha/Racha";
 import SeleccionMetaRacha from "../pages/Racha/SeleccionMetaRacha";
 import ProgresoGeneral from "../pages/Progress/ProgresoGeneral";
 import PrimerPaso from "../pages/DesafiosPrueba/PrimerPaso";
+import Timer from "../pages/Timer/Timer";
 
 import ProtectedRoute from "../components/auth/ProtectedRoute";
 import PublicRoute from "../components/auth/PublicRoute";
@@ -48,7 +49,7 @@ function AppRoutes() {
           <Route path="/configurar-meta" element={<SeleccionMetaRacha />} />
           <Route path="/progreso" element={<ProgresoGeneral />} />
           <Route path="/primerPaso" element={<PrimerPaso />} />
-
+          <Route path="/temporizador" element={<Timer />} />
         </Route>
 
       </Routes>

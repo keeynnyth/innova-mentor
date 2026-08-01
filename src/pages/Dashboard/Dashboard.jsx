@@ -4,7 +4,7 @@ import PrimaryButton from '../../components/common/PrimaryButton/PrimaryButton';
 
 import "./Dashboard.css";
 
-import avatarNova from "/branding/Avatar-Nova-Estrella.png";
+import avatarNova from "/branding/Nova avatar1.png";
 
 import useDashboard from "../../hooks/useDashboard";
 import { useUser } from "../../contexts/UserContext";
@@ -106,7 +106,7 @@ function Dashboard() {
       <div className="dashboard-content">
         <section className="welcome-card">
           <img
-            src={avatarNova}
+            src="/branding/Nova avatar1.png" 
             alt="Nova"
             className="dashboard-avatar"
           />
