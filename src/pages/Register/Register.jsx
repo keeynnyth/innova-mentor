@@ -23,10 +23,10 @@ function Register() {
       <div className="register-card">
 
         <img
-          src={avatarNova}
-          alt="Nova"
-          className="register-avatar"
-        />
+            src="/branding/Nova avatar1.png" 
+            alt="Nova"
+            className="dashboard-avatar"
+          />
 
         <h1 className="register-title">
           Crear cuenta
@@ -57,6 +57,33 @@ function Register() {
             onChange={handleChange}
             className="register-input"
           />
+
+          {/* Apodo (NUEVO) */}
+            <label htmlFor="nickname" className="register-label">
+              Apodo
+            </label>
+            <input
+              id="nickname"
+              name="nickname"
+              type="text"
+              autoComplete="nickname"
+              value={formData.nickname}
+              onChange={handleChange}
+              className="register-input"
+            />
+
+            {/* Fecha de nacimiento (NUEVO) */}
+            <label htmlFor="birthdate" className="register-label">
+              Fecha de nacimiento
+            </label>
+            <input
+              id="birthdate"
+              name="birthdate"
+              type="date"
+              value={formData.birthdate}
+              onChange={handleChange}
+              className="register-input"
+            />
 
           <label
             htmlFor="email"

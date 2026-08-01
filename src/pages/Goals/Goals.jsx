@@ -39,10 +39,10 @@ function Goals() {
       <div className="goals-card">
 
         <img
-          src={avatarNova}
-          alt="Nova"
-          className="goals-avatar"
-        />
+            src="/branding/Nova avatar1.png" 
+            alt="Nova"
+            className="dashboard-avatar"
+          />
 
         <h1 className="goals-title">
           ¿Qué te gustaría lograr?

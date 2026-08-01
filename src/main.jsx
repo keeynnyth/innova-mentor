@@ -7,6 +7,9 @@ import App from "./App.jsx";
 
 import { AuthProvider } from "./contexts/AuthContext";
 import { UserProvider } from "./contexts/UserContext";
+import { TasksProvider } from './contexts/TasksContext'; // Asegúrate de la ruta
+// import Dashboard from './pages/Dashboard/Dashboard.jsx';
+import { ContentProvider } from "./contexts/ContentContext";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -15,7 +18,15 @@ createRoot(document.getElementById("root")).render(
 
       <UserProvider>
 
-        <App />
+        <TasksProvider>
+
+          <ContentProvider>          
+
+          <App />
+
+          </ContentProvider>
+
+        </TasksProvider>
 
       </UserProvider>
 

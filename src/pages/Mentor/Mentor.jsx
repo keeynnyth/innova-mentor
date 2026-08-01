@@ -17,10 +17,10 @@ function Mentor() {
       <div className="mentor-card">
 
         <img
-          src={avatarNova}
-          alt="Nova"
-          className="mentor-avatar"
-        />
+            src="/branding/Nova avatar1.png" 
+            alt="Nova"
+            className="dashboard-avatar"
+          />
 
         <h1 className="mentor-title">
           ¡Hola! 👋

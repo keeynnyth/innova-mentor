@@ -13,10 +13,10 @@ function OnboardingLayout({
       <div className="onboarding-card">
 
         <img
-          src={avatarNova}
-          alt="Nova"
-          className="onboarding-avatar"
-        />
+            src="/branding/Nova avatar1.png" 
+            alt="Nova"
+            className="dashboard-avatar"
+          />
 
         <h1 className="onboarding-title">
           {title}

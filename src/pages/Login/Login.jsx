@@ -22,11 +22,11 @@ function Login() {
 
       <div className="login-card">
 
-        <img
-          src={avatarNova}
-          alt="Nova"
-          className="login-avatar"
-        />
+              <img
+                  src="/branding/Nova avatar1.png" 
+                  alt="Nova"
+                  className="dashboard-avatar"
+                />
 
         <h1 className="login-title">
           Iniciar sesión

@@ -14,10 +14,10 @@ function Ready() {
       <div className="ready-card">
 
         <img
-          src={avatarNova}
-          alt="Nova"
-          className="ready-avatar"
-        />
+            src="/branding/Nova avatar1.png" 
+            alt="Nova"
+            className="dashboard-avatar"
+          />
 
         <h1 className="ready-title">
           ¡Perfecto! 🎉

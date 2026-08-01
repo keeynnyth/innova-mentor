@@ -3,6 +3,7 @@ import "./Home.css";
 import { useNavigate } from "react-router-dom";
 
 import presentacion from "/branding/presentacion.png";
+import horizontal from "/branding/logo-horizontal.png";
 import avatarNova from "/branding/avatar-nova-hi.png";
 
 import PrimaryButton from "../../components/common/PrimaryButton/PrimaryButton";
@@ -12,20 +13,21 @@ function Home() {
 
   return (
     <div className="home-container">
-      <header className="home-header">
+     <header className="home-header"> 
         <img
-          src={presentacion}
+          src={horizontal}
           alt="Innova Mentor"
           className="home-logo"
         />
-      </header>
+      </header> 
 
       <main className="home-content">
         <div className="home-card">
           <img
-            src={avatarNova}
+            src="/branding/Nova avatar1.png" 
             alt="Nova"
-            className="home-avatar"
+            className="dashboard-avatar"
+            style={{ width: '160px', height: '150px' }}
           />
 
           <h1 className="home-title">

@@ -44,10 +44,10 @@ function Time() {
       <div className="time-card">
 
         <img
-          src={avatarNova}
-          alt="Nova"
-          className="time-avatar"
-        />
+            src="/branding/Nova avatar1.png" 
+            alt="Nova"
+            className="dashboard-avatar"
+          />
 
         <h1 className="time-title">
           ¿Cuánto tiempo podrías dedicar por día?

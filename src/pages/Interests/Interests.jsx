@@ -66,10 +66,10 @@ function Interests() {
       <div className="interests-card">
 
         <img
-          src={avatarNova}
-          alt="Nova"
-          className="interests-avatar"
-        />
+            src="/branding/Nova avatar1.png" 
+            alt="Nova"
+            className="dashboard-avatar"
+          />
 
         <h1 className="interests-title">
           ¿Sobre qué te gustaría aprender?

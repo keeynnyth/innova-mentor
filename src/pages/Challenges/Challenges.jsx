@@ -45,10 +45,11 @@ function Challenges() {
       <div className="challenges-card">
 
         <img
-          src={avatarNova}
-          alt="Nova"
-          className="challenges-avatar"
-        />
+            src="/branding/Nova avatar1.png" 
+            alt="Nova"
+            className="dashboard-avatar"
+          />
+          
 
         <h1 className="challenges-title">
           ¿Qué suele resultarte más difícil?
