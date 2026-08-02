@@ -1,48 +1,64 @@
 import React from 'react';
-import './tarjetasProgreso.css';
+
+// Se eliminó la importación del CSS problemático y se pasaron los estilos a estilos en línea o clases de Tailwind
+// import './tarjetasProgreso.css';
 
 export const ProgresoSemanal = ({ datos }) => {
   // 🚀 LÍNEA DE SIMULACIÓN: Fuerza el valor al porcentaje que quieras probar
   const weeklyProgress = 75; 
-  const desafios = "5/7";
+  // const desafios = "5/7";
 
   return (
-    <div className="metricas-fila">
+    // Se eliminó el div "metricas-fila" y se agregó width 100%
+    <section 
+      style={{ 
+        width: '100%', 
+        boxSizing: 'border-box',
+        backgroundColor: 'white',
+        borderRadius: '12px',
+        padding: '20px',
+        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        marginBottom: '20px'
+      }}
+    >
+      <div style={{ marginBottom: '16px', display: 'flex', alignItems: 'center' }}>
+        <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: '600', color: '#1f2937' }}>
+          📈 Mi progreso semanal
+        </h3>
+      </div>
       
-      {/* 1. Tarjeta de Progreso Semanal */}
-      <section className="info-card">
-        <div className="card-header">
-          <h3>📈 Mi progreso semanal</h3>
-        </div>
-        <div className="progress-bar">
-          <div
-            className="progress-value"
-            style={{ width: `${weeklyProgress}%` }} 
-          />
-        </div>
-        <span className="progress-text">
-          {weeklyProgress}% completado
-        </span>
-      </section>
-
-      {/* 2. Tarjeta de Desafíos Completados */}
-      <div className="tarjeta-metrica">
-        <div className="icono-contenedor desafios-color">
-          {/* SVG de Trofeo */}
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ stroke: '#22c55e', fill: 'none' }}>
-            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
-            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
-            <path d="M4 22h16" />
-            <path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34" />
-            <path d="M12 2a6 6 0 0 1 6 6v5a6 6 0 0 1-6 6 6 6 0 0 1-6-6V8a6 6 0 0 1 6-6z" />
-          </svg>
-        </div>
-        <div className="info-contenedor">
-          <p className="tarjeta-etiqueta">Desafíos Completados</p>
-          <p className="tarjeta-valor">{desafios}</p>
-        </div>
-      </div>   
-
-    </div>
+      <div 
+        style={{ 
+          width: '100%', 
+          backgroundColor: '#e5e7eb', 
+          borderRadius: '9999px', 
+          height: '12px',
+          overflow: 'hidden',
+          marginBottom: '8px'
+        }}
+      >
+        <div
+          style={{ 
+            width: `${weeklyProgress}%`, 
+            backgroundColor: '#4f46e5', 
+            height: '100%', 
+            borderRadius: '9999px',
+            transition: 'width 0.5s ease-in-out'
+          }} 
+        />
+      </div>
+      
+      <span style={{ fontSize: '0.875rem', color: '#6b7280', fontWeight: '500' }}>
+        {weeklyProgress}% completado
+      </span>
+    </section>
   );
 };
+
+export default function App() {
+  return (
+    <div style={{ padding: '20px', backgroundColor: '#f3f4f6', minHeight: '100vh' }}>
+       <ProgresoSemanal />
+    </div>
+  )
+}
